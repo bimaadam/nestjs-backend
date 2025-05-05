@@ -1,0 +1,223 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String     @id @default(cuid())
+  firstName    String?
+  lastName     String?
+  name         String?
+  email        String     @unique @db.VarChar(255)
+  password     String     @db.VarChar(100)
+  phone        String?    @db.VarChar(20)
+  avatar       String?
+  role         Role       @default(CLIENT)
+  isVerified   Boolean    @default(false)
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  lastLogin    DateTime?
+
+  // Relations
+  accounts     Account[]
+  sessions     Session[]
+  projects     Project[]  @relation("ClientProjects")
+  orders       Order[]
+  invoices     Invoice[]  @relation("ClientInvoices")
+
+  // Metadata
+  @@index([email])
+  @@index([role])
+  @@map("users")
+  TeamMember TeamMember[]
+}
+model Order {
+    id          String   @id @default(cuid())
+  userId      String
+  service     String
+  status      OrderStatus @default(PENDING)
+  createdAt   DateTime @default(now())
+
+  user        User @relation(fields: [userId], references: [id])
+}
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+}
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id])
+}
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@unique([provider, providerAccountId])
+}
+
+model Project {
+  id           String     @id @default(cuid())
+  name         String     @db.VarChar(100)
+  description  String?
+  startDate    DateTime
+  endDate      DateTime?
+  budget       Float?
+  status       ProjectStatus @default(PENDING)
+  priority     Int?       @default(3)
+  metadata     Json?
+
+  // Relations
+  client       User       @relation("ClientProjects", fields: [clientId], references: [id])
+  clientId     String
+  transactions Transaction[]
+  invoices     Invoice[]
+  teamMembers  TeamMember[]
+
+  // Timestamps
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  @@index([clientId])
+  @@index([status])
+  @@map("projects")
+}
+
+model Transaction {
+  id           String     @id @default(cuid())
+  amount       Float
+  currency     String     @default("IDR") @db.VarChar(3)
+  type         TransactionType
+  description  String?
+  reference    String?    @unique
+  method       PaymentMethod @default(BANK_TRANSFER)
+  status       PaymentStatus @default(PENDING)
+
+  // Relations
+  project      Project    @relation(fields: [projectId], references: [id])
+  projectId    String
+  invoice      Invoice?   @relation(fields: [invoiceId], references: [id])
+  invoiceId    String?
+
+  // Timestamps
+  date         DateTime   @default(now())
+  processedAt  DateTime?
+
+  @@index([projectId])
+  @@index([type])
+  @@map("transactions")
+}
+
+model Invoice {
+  id           String     @id @default(cuid())
+  number       String     @unique
+  amount       Float
+  tax          Float?     @default(0.0)
+  discount     Float?     @default(0.0)
+  dueDate      DateTime
+  status       InvoiceStatus @default(UNPAID)
+  notes        String?
+  terms        String?
+
+  // Relations
+  project      Project    @relation(fields: [projectId], references: [id])
+  projectId    String
+  client       User       @relation("ClientInvoices", fields: [clientId], references: [id])
+  clientId     String
+  transactions Transaction[]
+
+  // Timestamps
+  issuedDate   DateTime   @default(now())
+  paidDate     DateTime?
+
+  @@index([projectId])
+  @@index([clientId])
+  @@index([status])
+  @@map("invoices")
+}
+
+// Supporting models
+model TeamMember {
+  id         String   @id @default(cuid())
+  project    Project  @relation(fields: [projectId], references: [id])
+  projectId  String
+  user       User     @relation(fields: [userId], references: [id])
+  userId     String
+  role       String   @default("MEMBER")
+  
+  @@unique([projectId, userId])
+}
+
+// Enums
+enum Role {
+  ADMIN
+  STAFF
+  CLIENT
+}
+
+enum ProjectStatus {
+  DRAFT
+  PENDING
+  IN_PROGRESS
+  ON_HOLD
+  COMPLETED
+  CANCELLED
+}
+
+enum TransactionType {
+  DEPOSIT
+  PAYMENT
+  REFUND
+  EXPENSE
+}
+
+enum PaymentMethod {
+  BANK_TRANSFER
+  CREDIT_CARD
+  E_WALLET
+  CASH
+}
+
+enum PaymentStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REFUNDED
+}
+
+enum InvoiceStatus {
+  DRAFT
+  UNPAID
+  PARTIALLY_PAID
+  PAID
+  OVERDUE
+  CANCELLED
+}
