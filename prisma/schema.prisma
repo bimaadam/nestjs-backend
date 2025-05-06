@@ -171,7 +171,7 @@ model TeamMember {
   projectId  String
   user       User     @relation(fields: [userId], references: [id])
   userId     String
-  role       String   @default("MEMBER")
+  role       String   @default("ADMIN")
   
   @@unique([projectId, userId])
 }
