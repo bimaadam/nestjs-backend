@@ -17,7 +17,7 @@ export class AppController {
   @Get('profile')
   getProfile(@Request() req) {
     return {
-      message: "Anda Sudah Login!",
+      message: "You're logged in!",
       user: req.user // Data user dari JWT token
     };
   }

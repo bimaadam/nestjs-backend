@@ -10,7 +10,7 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
-  async validateUser(email: string, password: string) {
+  async validateUser(email: string, password: string, name: string) {
     const user = await this.prisma.user.findUnique({ where: { email } });
     
     if (!user) {
@@ -28,7 +28,7 @@ export class AuthService {
   }
 
   async login(user: any) {
-    const payload = { email: user.email, sub: user.id, role: user.role };
+    const payload = { email: user.email, sub: user.id, role: user.role, name: user.name };
     return {
       access_token: this.jwtService.sign(payload),
       user: {

@@ -10,19 +10,13 @@ export class AuthController {
   @Post('login')
   async login(@Body() loginDto: LoginDto) {
     const user = await this.authService.validateUser(loginDto.email, loginDto.password);
-    return {
-      message: 'Sukses login',
-      data: user
-    }
+    return this.authService.login(user);
   }
 
   @Post('register')
   async register(@Body() registerDto: RegisterDto) {
     const user = await this.authService.register(registerDto);
     const { password, ...result } = user;
-    return {
-      message: 'register success',
-      data: result
-    };
+    return result;
   }
 }
