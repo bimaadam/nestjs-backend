@@ -42,6 +42,7 @@ model User {
   @@map("users")
   TeamMember TeamMember[]
 }
+
 model Order {
     id          String   @id @default(cuid())
   userId      String

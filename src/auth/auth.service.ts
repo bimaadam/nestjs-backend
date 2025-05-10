@@ -1,58 +1,59 @@
-// auth.service.ts
-import { ForbiddenException, Injectable } from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import * as bcrypt from 'bcrypt';
-import { PrismaService } from 'src/prisma/prisma.service';
-
-// auth.service.ts
+import * as bcrypt from 'bcryptjs';
+import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class AuthService {
-  constructor(private prisma: PrismaService, private jwt: JwtService) {}
+  constructor(
+    private prisma: PrismaService,
+    private jwtService: JwtService,
+  ) {}
 
-  async register(dto: {
+  async validateUser(email: string, password: string) {
+    const user = await this.prisma.user.findUnique({ where: { email } });
+    
+    if (!user) {
+      throw new UnauthorizedException('Email tidak ditemukan');
+    }
+
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    
+    if (!isPasswordValid) {
+      throw new UnauthorizedException('Password salah');
+    }
+
+    const { password: _, ...result } = user;
+    return result;
+  }
+
+  async login(user: any) {
+    const payload = { email: user.email, sub: user.id, role: user.role };
+    return {
+      access_token: this.jwtService.sign(payload),
+      user: {
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        role: user.role
+      }
+    };
+  }
+
+  async register(data: {
     email: string;
     password: string;
     firstName?: string;
     lastName?: string;
-    phone?: string;
   }) {
-    const hash = await bcrypt.hash(dto.password, 10);
-    const user = await this.prisma.user.create({
+    const hashedPassword = await bcrypt.hash(data.password, 10);
+    
+    return this.prisma.user.create({
       data: {
-        email: dto.email,
-        password: hash,
-        firstName: dto.firstName,
-        lastName: dto.lastName,
-        phone: dto.phone,
-        isVerified: false,
-        role: 'CLIENT',
+        ...data,
+        password: hashedPassword,
+        name: `${data.firstName} ${data.lastName}`.trim(),
       },
     });
-
-    return this.signToken(user.id, user.email, user.role);
-  }
-
-  async login(dto: { email: string; password: string }) {
-    const user = await this.prisma.user.findUnique({ where: { email: dto.email } });
-    if (!user) throw new ForbiddenException('User not found');
-
-    const pwMatch = await bcrypt.compare(dto.password, user.password);
-    if (!pwMatch) throw new ForbiddenException('Password salah');
-
-    // update last login
-    await this.prisma.user.update({
-      where: { id: user.id },
-      data: { lastLogin: new Date() },
-    });
-
-    return this.signToken(user.id, user.email, user.role);
-  }
-
-  private signToken(userId: string, email: string, role: string) {
-    const payload = { sub: userId, email, role };
-    const token = this.jwt.sign(payload, { expiresIn: '1h' });
-    return { access_token: token };
   }
 }
-
