@@ -10,7 +10,7 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
-  async validateUser(email: string, password: string, name: string) {
+  async validateUser(email: string, password: string, name: void) {
     const user = await this.prisma.user.findUnique({ where: { email } });
     
     if (!user) {
@@ -45,6 +45,7 @@ export class AuthService {
     password: string;
     firstName?: string;
     lastName?: string;
+    isVerified?: boolean;
   }) {
     const hashedPassword = await bcrypt.hash(data.password, 10);
     
@@ -53,6 +54,7 @@ export class AuthService {
         ...data,
         password: hashedPassword,
         name: `${data.firstName} ${data.lastName}`.trim(),
+        isVerified: true
       },
     });
   }
