@@ -10,7 +10,7 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
-  async validateUser(email: string, password: string, name: void) {
+  async validateUser(email: string, password: string) {
     const user = await this.prisma.user.findUnique({ where: { email } });
     
     if (!user) {
@@ -29,14 +29,16 @@ export class AuthService {
 
   async login(user: any) {
     const payload = { email: user.email, sub: user.id, role: user.role, name: user.name };
+    const accessToken = this.jwtService.sign(payload);
+
     return {
-      access_token: this.jwtService.sign(payload),
+      access_token: accessToken,
       user: {
         id: user.id,
         email: user.email,
         name: user.name,
-        role: user.role
-      }
+        role: user.role,
+      },
     };
   }
 
@@ -53,9 +55,41 @@ export class AuthService {
       data: {
         ...data,
         password: hashedPassword,
-        name: `${data.firstName} ${data.lastName}`.trim(),
-        isVerified: true
+        name: `${data.firstName ?? ''} ${data.lastName ?? ''}`.trim(),
+        isVerified: true,
       },
     });
+  }
+
+  async logout(token: string) {
+    try {
+      const decoded = this.jwtService.verify(token);
+
+      // Cek jika token sudah di-blacklist
+      const isBlacklisted = await this.isTokenBlacklisted(token);
+      if (isBlacklisted) {
+        return { message: 'Token sudah di-blacklist' };
+      }
+
+      // Masukkan token ke blacklist
+      await this.prisma.blacklistedToken.create({
+        data: {
+          token: token,
+          expiresAt: new Date(decoded.exp * 1000),
+        },
+      });
+
+      return { message: 'Logout berhasil' };
+    } catch (error) {
+      console.log('Logout Error:', error.message);
+      return { message: 'Logout berhasil' }; // Jika token tidak valid, tetap return sukses
+    }
+  }
+
+  async isTokenBlacklisted(token: string): Promise<boolean> {
+    const found = await this.prisma.blacklistedToken.findUnique({
+      where: { token },
+    });
+    return !!found;
   }
 }

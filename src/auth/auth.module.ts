@@ -5,7 +5,7 @@ import { PrismaModule } from '../prisma/prisma.module';
 import { AuthService } from './auth.service';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { AuthController } from './auth.controller';
-import { LogoutModule } from './logout/logout.module';
+import { TasksModule } from './task/task.module';
 
 @Module({
   imports: [
@@ -15,7 +15,7 @@ import { LogoutModule } from './logout/logout.module';
       secret: process.env.JWT_SECRET,
       signOptions: { expiresIn: '1d' },
     }),
-    LogoutModule,
+    TasksModule,
   ],
   controllers: [AuthController], // <-- PASTIKAN CONTROLLER DI SINI
   providers: [AuthService, JwtStrategy],

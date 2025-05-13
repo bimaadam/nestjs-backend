@@ -120,6 +120,13 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
+exports.Prisma.BlacklistedTokenScalarFieldEnum = {
+  id: 'id',
+  token: 'token',
+  expiresAt: 'expiresAt',
+  createdAt: 'createdAt'
+};
+
 exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
   firstName: 'firstName',
@@ -297,6 +304,7 @@ exports.InvoiceStatus = exports.$Enums.InvoiceStatus = {
 };
 
 exports.Prisma.ModelName = {
+  BlacklistedToken: 'BlacklistedToken',
   User: 'User',
   Order: 'Order',
   Session: 'Session',
