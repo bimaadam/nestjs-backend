@@ -1,0 +1,11 @@
+/*
+  Warnings:
+
+  - A unique constraint covering the columns `[provider,providerAccountId,access_token,expires_at]` on the table `Account` will be added. If there are existing duplicate values, this will fail.
+
+*/
+-- DropIndex
+DROP INDEX "Account_provider_providerAccountId_key";
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Account_provider_providerAccountId_access_token_expires_at_key" ON "Account"("provider", "providerAccountId", "access_token", "expires_at");

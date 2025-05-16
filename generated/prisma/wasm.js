@@ -120,11 +120,11 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.BlacklistedTokenScalarFieldEnum = {
+exports.Prisma.BlacklistTokenScalarFieldEnum = {
   id: 'id',
-  token: 'token',
-  expiresAt: 'expiresAt',
-  createdAt: 'createdAt'
+  userId: 'userId',
+  access_token: 'access_token',
+  expires_at: 'expires_at'
 };
 
 exports.Prisma.UserScalarFieldEnum = {
@@ -162,11 +162,11 @@ exports.Prisma.AccountScalarFieldEnum = {
   id: 'id',
   userId: 'userId',
   type: 'type',
+  access_token: 'access_token',
+  expires_at: 'expires_at',
   provider: 'provider',
   providerAccountId: 'providerAccountId',
   refresh_token: 'refresh_token',
-  access_token: 'access_token',
-  expires_at: 'expires_at',
   token_type: 'token_type',
   scope: 'scope',
   id_token: 'id_token',
@@ -304,7 +304,7 @@ exports.InvoiceStatus = exports.$Enums.InvoiceStatus = {
 };
 
 exports.Prisma.ModelName = {
-  BlacklistedToken: 'BlacklistedToken',
+  BlacklistToken: 'BlacklistToken',
   User: 'User',
   Order: 'Order',
   Session: 'Session',

@@ -14,9 +14,9 @@ export class CleanupTokensTask {
     this.logger.log('Running expired tokens cleanup...');
     
     try {
-      const result = await this.prisma.blacklistedToken.deleteMany({
+      const result = await this.prisma.blacklistToken.deleteMany({
         where: {
-          expiresAt: {
+          expires_at: {
             lt: new Date() // Hapus token yang expired
           }
         }

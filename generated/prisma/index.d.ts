@@ -14,10 +14,10 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model BlacklistedToken
+ * Model BlacklistToken
  * 
  */
-export type BlacklistedToken = $Result.DefaultSelection<Prisma.$BlacklistedTokenPayload>
+export type BlacklistToken = $Result.DefaultSelection<Prisma.$BlacklistTokenPayload>
 /**
  * Model User
  * 
@@ -172,8 +172,8 @@ export const InvoiceStatus: typeof $Enums.InvoiceStatus
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more BlacklistedTokens
- * const blacklistedTokens = await prisma.blacklistedToken.findMany()
+ * // Fetch zero or more BlacklistTokens
+ * const blacklistTokens = await prisma.blacklistToken.findMany()
  * ```
  *
  *
@@ -193,8 +193,8 @@ export class PrismaClient<
    * @example
    * ```
    * const prisma = new PrismaClient()
-   * // Fetch zero or more BlacklistedTokens
-   * const blacklistedTokens = await prisma.blacklistedToken.findMany()
+   * // Fetch zero or more BlacklistTokens
+   * const blacklistTokens = await prisma.blacklistToken.findMany()
    * ```
    *
    *
@@ -291,14 +291,14 @@ export class PrismaClient<
   }>>
 
       /**
-   * `prisma.blacklistedToken`: Exposes CRUD operations for the **BlacklistedToken** model.
+   * `prisma.blacklistToken`: Exposes CRUD operations for the **BlacklistToken** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more BlacklistedTokens
-    * const blacklistedTokens = await prisma.blacklistedToken.findMany()
+    * // Fetch zero or more BlacklistTokens
+    * const blacklistTokens = await prisma.blacklistToken.findMany()
     * ```
     */
-  get blacklistedToken(): Prisma.BlacklistedTokenDelegate<ExtArgs, ClientOptions>;
+  get blacklistToken(): Prisma.BlacklistTokenDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.user`: Exposes CRUD operations for the **User** model.
@@ -819,7 +819,7 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    BlacklistedToken: 'BlacklistedToken',
+    BlacklistToken: 'BlacklistToken',
     User: 'User',
     Order: 'Order',
     Session: 'Session',
@@ -846,81 +846,81 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "blacklistedToken" | "user" | "order" | "session" | "account" | "project" | "transaction" | "invoice" | "teamMember"
+      modelProps: "blacklistToken" | "user" | "order" | "session" | "account" | "project" | "transaction" | "invoice" | "teamMember"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
-      BlacklistedToken: {
-        payload: Prisma.$BlacklistedTokenPayload<ExtArgs>
-        fields: Prisma.BlacklistedTokenFieldRefs
+      BlacklistToken: {
+        payload: Prisma.$BlacklistTokenPayload<ExtArgs>
+        fields: Prisma.BlacklistTokenFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.BlacklistedTokenFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BlacklistedTokenPayload> | null
+            args: Prisma.BlacklistTokenFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BlacklistTokenPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.BlacklistedTokenFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BlacklistedTokenPayload>
+            args: Prisma.BlacklistTokenFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BlacklistTokenPayload>
           }
           findFirst: {
-            args: Prisma.BlacklistedTokenFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BlacklistedTokenPayload> | null
+            args: Prisma.BlacklistTokenFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BlacklistTokenPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.BlacklistedTokenFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BlacklistedTokenPayload>
+            args: Prisma.BlacklistTokenFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BlacklistTokenPayload>
           }
           findMany: {
-            args: Prisma.BlacklistedTokenFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BlacklistedTokenPayload>[]
+            args: Prisma.BlacklistTokenFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BlacklistTokenPayload>[]
           }
           create: {
-            args: Prisma.BlacklistedTokenCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BlacklistedTokenPayload>
+            args: Prisma.BlacklistTokenCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BlacklistTokenPayload>
           }
           createMany: {
-            args: Prisma.BlacklistedTokenCreateManyArgs<ExtArgs>
+            args: Prisma.BlacklistTokenCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.BlacklistedTokenCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BlacklistedTokenPayload>[]
+            args: Prisma.BlacklistTokenCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BlacklistTokenPayload>[]
           }
           delete: {
-            args: Prisma.BlacklistedTokenDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BlacklistedTokenPayload>
+            args: Prisma.BlacklistTokenDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BlacklistTokenPayload>
           }
           update: {
-            args: Prisma.BlacklistedTokenUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BlacklistedTokenPayload>
+            args: Prisma.BlacklistTokenUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BlacklistTokenPayload>
           }
           deleteMany: {
-            args: Prisma.BlacklistedTokenDeleteManyArgs<ExtArgs>
+            args: Prisma.BlacklistTokenDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.BlacklistedTokenUpdateManyArgs<ExtArgs>
+            args: Prisma.BlacklistTokenUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.BlacklistedTokenUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BlacklistedTokenPayload>[]
+            args: Prisma.BlacklistTokenUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BlacklistTokenPayload>[]
           }
           upsert: {
-            args: Prisma.BlacklistedTokenUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BlacklistedTokenPayload>
+            args: Prisma.BlacklistTokenUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BlacklistTokenPayload>
           }
           aggregate: {
-            args: Prisma.BlacklistedTokenAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateBlacklistedToken>
+            args: Prisma.BlacklistTokenAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateBlacklistToken>
           }
           groupBy: {
-            args: Prisma.BlacklistedTokenGroupByArgs<ExtArgs>
-            result: $Utils.Optional<BlacklistedTokenGroupByOutputType>[]
+            args: Prisma.BlacklistTokenGroupByArgs<ExtArgs>
+            result: $Utils.Optional<BlacklistTokenGroupByOutputType>[]
           }
           count: {
-            args: Prisma.BlacklistedTokenCountArgs<ExtArgs>
-            result: $Utils.Optional<BlacklistedTokenCountAggregateOutputType> | number
+            args: Prisma.BlacklistTokenCountArgs<ExtArgs>
+            result: $Utils.Optional<BlacklistTokenCountAggregateOutputType> | number
           }
         }
       }
@@ -1600,7 +1600,7 @@ export namespace Prisma {
     omit?: Prisma.GlobalOmitConfig
   }
   export type GlobalOmitConfig = {
-    blacklistedToken?: BlacklistedTokenOmit
+    blacklistToken?: BlacklistTokenOmit
     user?: UserOmit
     order?: OrderOmit
     session?: SessionOmit
@@ -1709,6 +1709,7 @@ export namespace Prisma {
     orders: number
     invoices: number
     TeamMember: number
+    BlacklistToken: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -1718,6 +1719,7 @@ export namespace Prisma {
     orders?: boolean | UserCountOutputTypeCountOrdersArgs
     invoices?: boolean | UserCountOutputTypeCountInvoicesArgs
     TeamMember?: boolean | UserCountOutputTypeCountTeamMemberArgs
+    BlacklistToken?: boolean | UserCountOutputTypeCountBlacklistTokenArgs
   }
 
   // Custom InputTypes
@@ -1771,6 +1773,13 @@ export namespace Prisma {
    */
   export type UserCountOutputTypeCountTeamMemberArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: TeamMemberWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountBlacklistTokenArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BlacklistTokenWhereInput
   }
 
 
@@ -1859,324 +1868,338 @@ export namespace Prisma {
    */
 
   /**
-   * Model BlacklistedToken
+   * Model BlacklistToken
    */
 
-  export type AggregateBlacklistedToken = {
-    _count: BlacklistedTokenCountAggregateOutputType | null
-    _min: BlacklistedTokenMinAggregateOutputType | null
-    _max: BlacklistedTokenMaxAggregateOutputType | null
+  export type AggregateBlacklistToken = {
+    _count: BlacklistTokenCountAggregateOutputType | null
+    _min: BlacklistTokenMinAggregateOutputType | null
+    _max: BlacklistTokenMaxAggregateOutputType | null
   }
 
-  export type BlacklistedTokenMinAggregateOutputType = {
+  export type BlacklistTokenMinAggregateOutputType = {
     id: string | null
-    token: string | null
-    expiresAt: Date | null
-    createdAt: Date | null
+    userId: string | null
+    access_token: string | null
+    expires_at: Date | null
   }
 
-  export type BlacklistedTokenMaxAggregateOutputType = {
+  export type BlacklistTokenMaxAggregateOutputType = {
     id: string | null
-    token: string | null
-    expiresAt: Date | null
-    createdAt: Date | null
+    userId: string | null
+    access_token: string | null
+    expires_at: Date | null
   }
 
-  export type BlacklistedTokenCountAggregateOutputType = {
+  export type BlacklistTokenCountAggregateOutputType = {
     id: number
-    token: number
-    expiresAt: number
-    createdAt: number
+    userId: number
+    access_token: number
+    expires_at: number
     _all: number
   }
 
 
-  export type BlacklistedTokenMinAggregateInputType = {
+  export type BlacklistTokenMinAggregateInputType = {
     id?: true
-    token?: true
-    expiresAt?: true
-    createdAt?: true
+    userId?: true
+    access_token?: true
+    expires_at?: true
   }
 
-  export type BlacklistedTokenMaxAggregateInputType = {
+  export type BlacklistTokenMaxAggregateInputType = {
     id?: true
-    token?: true
-    expiresAt?: true
-    createdAt?: true
+    userId?: true
+    access_token?: true
+    expires_at?: true
   }
 
-  export type BlacklistedTokenCountAggregateInputType = {
+  export type BlacklistTokenCountAggregateInputType = {
     id?: true
-    token?: true
-    expiresAt?: true
-    createdAt?: true
+    userId?: true
+    access_token?: true
+    expires_at?: true
     _all?: true
   }
 
-  export type BlacklistedTokenAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type BlacklistTokenAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which BlacklistedToken to aggregate.
+     * Filter which BlacklistToken to aggregate.
      */
-    where?: BlacklistedTokenWhereInput
+    where?: BlacklistTokenWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of BlacklistedTokens to fetch.
+     * Determine the order of BlacklistTokens to fetch.
      */
-    orderBy?: BlacklistedTokenOrderByWithRelationInput | BlacklistedTokenOrderByWithRelationInput[]
+    orderBy?: BlacklistTokenOrderByWithRelationInput | BlacklistTokenOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: BlacklistedTokenWhereUniqueInput
+    cursor?: BlacklistTokenWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` BlacklistedTokens from the position of the cursor.
+     * Take `±n` BlacklistTokens from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` BlacklistedTokens.
+     * Skip the first `n` BlacklistTokens.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned BlacklistedTokens
+     * Count returned BlacklistTokens
     **/
-    _count?: true | BlacklistedTokenCountAggregateInputType
+    _count?: true | BlacklistTokenCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: BlacklistedTokenMinAggregateInputType
+    _min?: BlacklistTokenMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: BlacklistedTokenMaxAggregateInputType
+    _max?: BlacklistTokenMaxAggregateInputType
   }
 
-  export type GetBlacklistedTokenAggregateType<T extends BlacklistedTokenAggregateArgs> = {
-        [P in keyof T & keyof AggregateBlacklistedToken]: P extends '_count' | 'count'
+  export type GetBlacklistTokenAggregateType<T extends BlacklistTokenAggregateArgs> = {
+        [P in keyof T & keyof AggregateBlacklistToken]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateBlacklistedToken[P]>
-      : GetScalarType<T[P], AggregateBlacklistedToken[P]>
+        : GetScalarType<T[P], AggregateBlacklistToken[P]>
+      : GetScalarType<T[P], AggregateBlacklistToken[P]>
   }
 
 
 
 
-  export type BlacklistedTokenGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: BlacklistedTokenWhereInput
-    orderBy?: BlacklistedTokenOrderByWithAggregationInput | BlacklistedTokenOrderByWithAggregationInput[]
-    by: BlacklistedTokenScalarFieldEnum[] | BlacklistedTokenScalarFieldEnum
-    having?: BlacklistedTokenScalarWhereWithAggregatesInput
+  export type BlacklistTokenGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BlacklistTokenWhereInput
+    orderBy?: BlacklistTokenOrderByWithAggregationInput | BlacklistTokenOrderByWithAggregationInput[]
+    by: BlacklistTokenScalarFieldEnum[] | BlacklistTokenScalarFieldEnum
+    having?: BlacklistTokenScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: BlacklistedTokenCountAggregateInputType | true
-    _min?: BlacklistedTokenMinAggregateInputType
-    _max?: BlacklistedTokenMaxAggregateInputType
+    _count?: BlacklistTokenCountAggregateInputType | true
+    _min?: BlacklistTokenMinAggregateInputType
+    _max?: BlacklistTokenMaxAggregateInputType
   }
 
-  export type BlacklistedTokenGroupByOutputType = {
+  export type BlacklistTokenGroupByOutputType = {
     id: string
-    token: string
-    expiresAt: Date
-    createdAt: Date
-    _count: BlacklistedTokenCountAggregateOutputType | null
-    _min: BlacklistedTokenMinAggregateOutputType | null
-    _max: BlacklistedTokenMaxAggregateOutputType | null
+    userId: string
+    access_token: string
+    expires_at: Date
+    _count: BlacklistTokenCountAggregateOutputType | null
+    _min: BlacklistTokenMinAggregateOutputType | null
+    _max: BlacklistTokenMaxAggregateOutputType | null
   }
 
-  type GetBlacklistedTokenGroupByPayload<T extends BlacklistedTokenGroupByArgs> = Prisma.PrismaPromise<
+  type GetBlacklistTokenGroupByPayload<T extends BlacklistTokenGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<BlacklistedTokenGroupByOutputType, T['by']> &
+      PickEnumerable<BlacklistTokenGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof BlacklistedTokenGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof BlacklistTokenGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], BlacklistedTokenGroupByOutputType[P]>
-            : GetScalarType<T[P], BlacklistedTokenGroupByOutputType[P]>
+              : GetScalarType<T[P], BlacklistTokenGroupByOutputType[P]>
+            : GetScalarType<T[P], BlacklistTokenGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type BlacklistedTokenSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type BlacklistTokenSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    token?: boolean
-    expiresAt?: boolean
-    createdAt?: boolean
-  }, ExtArgs["result"]["blacklistedToken"]>
+    userId?: boolean
+    access_token?: boolean
+    expires_at?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["blacklistToken"]>
 
-  export type BlacklistedTokenSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type BlacklistTokenSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    token?: boolean
-    expiresAt?: boolean
-    createdAt?: boolean
-  }, ExtArgs["result"]["blacklistedToken"]>
+    userId?: boolean
+    access_token?: boolean
+    expires_at?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["blacklistToken"]>
 
-  export type BlacklistedTokenSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type BlacklistTokenSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    token?: boolean
-    expiresAt?: boolean
-    createdAt?: boolean
-  }, ExtArgs["result"]["blacklistedToken"]>
+    userId?: boolean
+    access_token?: boolean
+    expires_at?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["blacklistToken"]>
 
-  export type BlacklistedTokenSelectScalar = {
+  export type BlacklistTokenSelectScalar = {
     id?: boolean
-    token?: boolean
-    expiresAt?: boolean
-    createdAt?: boolean
+    userId?: boolean
+    access_token?: boolean
+    expires_at?: boolean
   }
 
-  export type BlacklistedTokenOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "token" | "expiresAt" | "createdAt", ExtArgs["result"]["blacklistedToken"]>
+  export type BlacklistTokenOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "access_token" | "expires_at", ExtArgs["result"]["blacklistToken"]>
+  export type BlacklistTokenInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type BlacklistTokenIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type BlacklistTokenIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
 
-  export type $BlacklistedTokenPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "BlacklistedToken"
-    objects: {}
+  export type $BlacklistTokenPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "BlacklistToken"
+    objects: {
+      user: Prisma.$UserPayload<ExtArgs>
+    }
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      token: string
-      expiresAt: Date
-      createdAt: Date
-    }, ExtArgs["result"]["blacklistedToken"]>
+      userId: string
+      access_token: string
+      expires_at: Date
+    }, ExtArgs["result"]["blacklistToken"]>
     composites: {}
   }
 
-  type BlacklistedTokenGetPayload<S extends boolean | null | undefined | BlacklistedTokenDefaultArgs> = $Result.GetResult<Prisma.$BlacklistedTokenPayload, S>
+  type BlacklistTokenGetPayload<S extends boolean | null | undefined | BlacklistTokenDefaultArgs> = $Result.GetResult<Prisma.$BlacklistTokenPayload, S>
 
-  type BlacklistedTokenCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<BlacklistedTokenFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: BlacklistedTokenCountAggregateInputType | true
+  type BlacklistTokenCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<BlacklistTokenFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: BlacklistTokenCountAggregateInputType | true
     }
 
-  export interface BlacklistedTokenDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['BlacklistedToken'], meta: { name: 'BlacklistedToken' } }
+  export interface BlacklistTokenDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['BlacklistToken'], meta: { name: 'BlacklistToken' } }
     /**
-     * Find zero or one BlacklistedToken that matches the filter.
-     * @param {BlacklistedTokenFindUniqueArgs} args - Arguments to find a BlacklistedToken
+     * Find zero or one BlacklistToken that matches the filter.
+     * @param {BlacklistTokenFindUniqueArgs} args - Arguments to find a BlacklistToken
      * @example
-     * // Get one BlacklistedToken
-     * const blacklistedToken = await prisma.blacklistedToken.findUnique({
+     * // Get one BlacklistToken
+     * const blacklistToken = await prisma.blacklistToken.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends BlacklistedTokenFindUniqueArgs>(args: SelectSubset<T, BlacklistedTokenFindUniqueArgs<ExtArgs>>): Prisma__BlacklistedTokenClient<$Result.GetResult<Prisma.$BlacklistedTokenPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends BlacklistTokenFindUniqueArgs>(args: SelectSubset<T, BlacklistTokenFindUniqueArgs<ExtArgs>>): Prisma__BlacklistTokenClient<$Result.GetResult<Prisma.$BlacklistTokenPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one BlacklistedToken that matches the filter or throw an error with `error.code='P2025'`
+     * Find one BlacklistToken that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {BlacklistedTokenFindUniqueOrThrowArgs} args - Arguments to find a BlacklistedToken
+     * @param {BlacklistTokenFindUniqueOrThrowArgs} args - Arguments to find a BlacklistToken
      * @example
-     * // Get one BlacklistedToken
-     * const blacklistedToken = await prisma.blacklistedToken.findUniqueOrThrow({
+     * // Get one BlacklistToken
+     * const blacklistToken = await prisma.blacklistToken.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends BlacklistedTokenFindUniqueOrThrowArgs>(args: SelectSubset<T, BlacklistedTokenFindUniqueOrThrowArgs<ExtArgs>>): Prisma__BlacklistedTokenClient<$Result.GetResult<Prisma.$BlacklistedTokenPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends BlacklistTokenFindUniqueOrThrowArgs>(args: SelectSubset<T, BlacklistTokenFindUniqueOrThrowArgs<ExtArgs>>): Prisma__BlacklistTokenClient<$Result.GetResult<Prisma.$BlacklistTokenPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first BlacklistedToken that matches the filter.
+     * Find the first BlacklistToken that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {BlacklistedTokenFindFirstArgs} args - Arguments to find a BlacklistedToken
+     * @param {BlacklistTokenFindFirstArgs} args - Arguments to find a BlacklistToken
      * @example
-     * // Get one BlacklistedToken
-     * const blacklistedToken = await prisma.blacklistedToken.findFirst({
+     * // Get one BlacklistToken
+     * const blacklistToken = await prisma.blacklistToken.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends BlacklistedTokenFindFirstArgs>(args?: SelectSubset<T, BlacklistedTokenFindFirstArgs<ExtArgs>>): Prisma__BlacklistedTokenClient<$Result.GetResult<Prisma.$BlacklistedTokenPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends BlacklistTokenFindFirstArgs>(args?: SelectSubset<T, BlacklistTokenFindFirstArgs<ExtArgs>>): Prisma__BlacklistTokenClient<$Result.GetResult<Prisma.$BlacklistTokenPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first BlacklistedToken that matches the filter or
+     * Find the first BlacklistToken that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {BlacklistedTokenFindFirstOrThrowArgs} args - Arguments to find a BlacklistedToken
+     * @param {BlacklistTokenFindFirstOrThrowArgs} args - Arguments to find a BlacklistToken
      * @example
-     * // Get one BlacklistedToken
-     * const blacklistedToken = await prisma.blacklistedToken.findFirstOrThrow({
+     * // Get one BlacklistToken
+     * const blacklistToken = await prisma.blacklistToken.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends BlacklistedTokenFindFirstOrThrowArgs>(args?: SelectSubset<T, BlacklistedTokenFindFirstOrThrowArgs<ExtArgs>>): Prisma__BlacklistedTokenClient<$Result.GetResult<Prisma.$BlacklistedTokenPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends BlacklistTokenFindFirstOrThrowArgs>(args?: SelectSubset<T, BlacklistTokenFindFirstOrThrowArgs<ExtArgs>>): Prisma__BlacklistTokenClient<$Result.GetResult<Prisma.$BlacklistTokenPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more BlacklistedTokens that matches the filter.
+     * Find zero or more BlacklistTokens that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {BlacklistedTokenFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {BlacklistTokenFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all BlacklistedTokens
-     * const blacklistedTokens = await prisma.blacklistedToken.findMany()
+     * // Get all BlacklistTokens
+     * const blacklistTokens = await prisma.blacklistToken.findMany()
      * 
-     * // Get first 10 BlacklistedTokens
-     * const blacklistedTokens = await prisma.blacklistedToken.findMany({ take: 10 })
+     * // Get first 10 BlacklistTokens
+     * const blacklistTokens = await prisma.blacklistToken.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const blacklistedTokenWithIdOnly = await prisma.blacklistedToken.findMany({ select: { id: true } })
+     * const blacklistTokenWithIdOnly = await prisma.blacklistToken.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends BlacklistedTokenFindManyArgs>(args?: SelectSubset<T, BlacklistedTokenFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BlacklistedTokenPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends BlacklistTokenFindManyArgs>(args?: SelectSubset<T, BlacklistTokenFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BlacklistTokenPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a BlacklistedToken.
-     * @param {BlacklistedTokenCreateArgs} args - Arguments to create a BlacklistedToken.
+     * Create a BlacklistToken.
+     * @param {BlacklistTokenCreateArgs} args - Arguments to create a BlacklistToken.
      * @example
-     * // Create one BlacklistedToken
-     * const BlacklistedToken = await prisma.blacklistedToken.create({
+     * // Create one BlacklistToken
+     * const BlacklistToken = await prisma.blacklistToken.create({
      *   data: {
-     *     // ... data to create a BlacklistedToken
+     *     // ... data to create a BlacklistToken
      *   }
      * })
      * 
      */
-    create<T extends BlacklistedTokenCreateArgs>(args: SelectSubset<T, BlacklistedTokenCreateArgs<ExtArgs>>): Prisma__BlacklistedTokenClient<$Result.GetResult<Prisma.$BlacklistedTokenPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends BlacklistTokenCreateArgs>(args: SelectSubset<T, BlacklistTokenCreateArgs<ExtArgs>>): Prisma__BlacklistTokenClient<$Result.GetResult<Prisma.$BlacklistTokenPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many BlacklistedTokens.
-     * @param {BlacklistedTokenCreateManyArgs} args - Arguments to create many BlacklistedTokens.
+     * Create many BlacklistTokens.
+     * @param {BlacklistTokenCreateManyArgs} args - Arguments to create many BlacklistTokens.
      * @example
-     * // Create many BlacklistedTokens
-     * const blacklistedToken = await prisma.blacklistedToken.createMany({
+     * // Create many BlacklistTokens
+     * const blacklistToken = await prisma.blacklistToken.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends BlacklistedTokenCreateManyArgs>(args?: SelectSubset<T, BlacklistedTokenCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends BlacklistTokenCreateManyArgs>(args?: SelectSubset<T, BlacklistTokenCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many BlacklistedTokens and returns the data saved in the database.
-     * @param {BlacklistedTokenCreateManyAndReturnArgs} args - Arguments to create many BlacklistedTokens.
+     * Create many BlacklistTokens and returns the data saved in the database.
+     * @param {BlacklistTokenCreateManyAndReturnArgs} args - Arguments to create many BlacklistTokens.
      * @example
-     * // Create many BlacklistedTokens
-     * const blacklistedToken = await prisma.blacklistedToken.createManyAndReturn({
+     * // Create many BlacklistTokens
+     * const blacklistToken = await prisma.blacklistToken.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many BlacklistedTokens and only return the `id`
-     * const blacklistedTokenWithIdOnly = await prisma.blacklistedToken.createManyAndReturn({
+     * // Create many BlacklistTokens and only return the `id`
+     * const blacklistTokenWithIdOnly = await prisma.blacklistToken.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -2186,28 +2209,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends BlacklistedTokenCreateManyAndReturnArgs>(args?: SelectSubset<T, BlacklistedTokenCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BlacklistedTokenPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends BlacklistTokenCreateManyAndReturnArgs>(args?: SelectSubset<T, BlacklistTokenCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BlacklistTokenPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a BlacklistedToken.
-     * @param {BlacklistedTokenDeleteArgs} args - Arguments to delete one BlacklistedToken.
+     * Delete a BlacklistToken.
+     * @param {BlacklistTokenDeleteArgs} args - Arguments to delete one BlacklistToken.
      * @example
-     * // Delete one BlacklistedToken
-     * const BlacklistedToken = await prisma.blacklistedToken.delete({
+     * // Delete one BlacklistToken
+     * const BlacklistToken = await prisma.blacklistToken.delete({
      *   where: {
-     *     // ... filter to delete one BlacklistedToken
+     *     // ... filter to delete one BlacklistToken
      *   }
      * })
      * 
      */
-    delete<T extends BlacklistedTokenDeleteArgs>(args: SelectSubset<T, BlacklistedTokenDeleteArgs<ExtArgs>>): Prisma__BlacklistedTokenClient<$Result.GetResult<Prisma.$BlacklistedTokenPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends BlacklistTokenDeleteArgs>(args: SelectSubset<T, BlacklistTokenDeleteArgs<ExtArgs>>): Prisma__BlacklistTokenClient<$Result.GetResult<Prisma.$BlacklistTokenPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one BlacklistedToken.
-     * @param {BlacklistedTokenUpdateArgs} args - Arguments to update one BlacklistedToken.
+     * Update one BlacklistToken.
+     * @param {BlacklistTokenUpdateArgs} args - Arguments to update one BlacklistToken.
      * @example
-     * // Update one BlacklistedToken
-     * const blacklistedToken = await prisma.blacklistedToken.update({
+     * // Update one BlacklistToken
+     * const blacklistToken = await prisma.blacklistToken.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2217,30 +2240,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends BlacklistedTokenUpdateArgs>(args: SelectSubset<T, BlacklistedTokenUpdateArgs<ExtArgs>>): Prisma__BlacklistedTokenClient<$Result.GetResult<Prisma.$BlacklistedTokenPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends BlacklistTokenUpdateArgs>(args: SelectSubset<T, BlacklistTokenUpdateArgs<ExtArgs>>): Prisma__BlacklistTokenClient<$Result.GetResult<Prisma.$BlacklistTokenPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more BlacklistedTokens.
-     * @param {BlacklistedTokenDeleteManyArgs} args - Arguments to filter BlacklistedTokens to delete.
+     * Delete zero or more BlacklistTokens.
+     * @param {BlacklistTokenDeleteManyArgs} args - Arguments to filter BlacklistTokens to delete.
      * @example
-     * // Delete a few BlacklistedTokens
-     * const { count } = await prisma.blacklistedToken.deleteMany({
+     * // Delete a few BlacklistTokens
+     * const { count } = await prisma.blacklistToken.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends BlacklistedTokenDeleteManyArgs>(args?: SelectSubset<T, BlacklistedTokenDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends BlacklistTokenDeleteManyArgs>(args?: SelectSubset<T, BlacklistTokenDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more BlacklistedTokens.
+     * Update zero or more BlacklistTokens.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {BlacklistedTokenUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {BlacklistTokenUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many BlacklistedTokens
-     * const blacklistedToken = await prisma.blacklistedToken.updateMany({
+     * // Update many BlacklistTokens
+     * const blacklistToken = await prisma.blacklistToken.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2250,14 +2273,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends BlacklistedTokenUpdateManyArgs>(args: SelectSubset<T, BlacklistedTokenUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends BlacklistTokenUpdateManyArgs>(args: SelectSubset<T, BlacklistTokenUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more BlacklistedTokens and returns the data updated in the database.
-     * @param {BlacklistedTokenUpdateManyAndReturnArgs} args - Arguments to update many BlacklistedTokens.
+     * Update zero or more BlacklistTokens and returns the data updated in the database.
+     * @param {BlacklistTokenUpdateManyAndReturnArgs} args - Arguments to update many BlacklistTokens.
      * @example
-     * // Update many BlacklistedTokens
-     * const blacklistedToken = await prisma.blacklistedToken.updateManyAndReturn({
+     * // Update many BlacklistTokens
+     * const blacklistToken = await prisma.blacklistToken.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2266,8 +2289,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more BlacklistedTokens and only return the `id`
-     * const blacklistedTokenWithIdOnly = await prisma.blacklistedToken.updateManyAndReturn({
+     * // Update zero or more BlacklistTokens and only return the `id`
+     * const blacklistTokenWithIdOnly = await prisma.blacklistToken.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -2280,56 +2303,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends BlacklistedTokenUpdateManyAndReturnArgs>(args: SelectSubset<T, BlacklistedTokenUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BlacklistedTokenPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends BlacklistTokenUpdateManyAndReturnArgs>(args: SelectSubset<T, BlacklistTokenUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BlacklistTokenPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one BlacklistedToken.
-     * @param {BlacklistedTokenUpsertArgs} args - Arguments to update or create a BlacklistedToken.
+     * Create or update one BlacklistToken.
+     * @param {BlacklistTokenUpsertArgs} args - Arguments to update or create a BlacklistToken.
      * @example
-     * // Update or create a BlacklistedToken
-     * const blacklistedToken = await prisma.blacklistedToken.upsert({
+     * // Update or create a BlacklistToken
+     * const blacklistToken = await prisma.blacklistToken.upsert({
      *   create: {
-     *     // ... data to create a BlacklistedToken
+     *     // ... data to create a BlacklistToken
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the BlacklistedToken we want to update
+     *     // ... the filter for the BlacklistToken we want to update
      *   }
      * })
      */
-    upsert<T extends BlacklistedTokenUpsertArgs>(args: SelectSubset<T, BlacklistedTokenUpsertArgs<ExtArgs>>): Prisma__BlacklistedTokenClient<$Result.GetResult<Prisma.$BlacklistedTokenPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends BlacklistTokenUpsertArgs>(args: SelectSubset<T, BlacklistTokenUpsertArgs<ExtArgs>>): Prisma__BlacklistTokenClient<$Result.GetResult<Prisma.$BlacklistTokenPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of BlacklistedTokens.
+     * Count the number of BlacklistTokens.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {BlacklistedTokenCountArgs} args - Arguments to filter BlacklistedTokens to count.
+     * @param {BlacklistTokenCountArgs} args - Arguments to filter BlacklistTokens to count.
      * @example
-     * // Count the number of BlacklistedTokens
-     * const count = await prisma.blacklistedToken.count({
+     * // Count the number of BlacklistTokens
+     * const count = await prisma.blacklistToken.count({
      *   where: {
-     *     // ... the filter for the BlacklistedTokens we want to count
+     *     // ... the filter for the BlacklistTokens we want to count
      *   }
      * })
     **/
-    count<T extends BlacklistedTokenCountArgs>(
-      args?: Subset<T, BlacklistedTokenCountArgs>,
+    count<T extends BlacklistTokenCountArgs>(
+      args?: Subset<T, BlacklistTokenCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], BlacklistedTokenCountAggregateOutputType>
+          : GetScalarType<T['select'], BlacklistTokenCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a BlacklistedToken.
+     * Allows you to perform aggregations operations on a BlacklistToken.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {BlacklistedTokenAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {BlacklistTokenAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -2349,13 +2372,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends BlacklistedTokenAggregateArgs>(args: Subset<T, BlacklistedTokenAggregateArgs>): Prisma.PrismaPromise<GetBlacklistedTokenAggregateType<T>>
+    aggregate<T extends BlacklistTokenAggregateArgs>(args: Subset<T, BlacklistTokenAggregateArgs>): Prisma.PrismaPromise<GetBlacklistTokenAggregateType<T>>
 
     /**
-     * Group by BlacklistedToken.
+     * Group by BlacklistToken.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {BlacklistedTokenGroupByArgs} args - Group by arguments.
+     * @param {BlacklistTokenGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -2370,14 +2393,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends BlacklistedTokenGroupByArgs,
+      T extends BlacklistTokenGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: BlacklistedTokenGroupByArgs['orderBy'] }
-        : { orderBy?: BlacklistedTokenGroupByArgs['orderBy'] },
+        ? { orderBy: BlacklistTokenGroupByArgs['orderBy'] }
+        : { orderBy?: BlacklistTokenGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -2426,21 +2449,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, BlacklistedTokenGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBlacklistedTokenGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, BlacklistTokenGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBlacklistTokenGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the BlacklistedToken model
+   * Fields of the BlacklistToken model
    */
-  readonly fields: BlacklistedTokenFieldRefs;
+  readonly fields: BlacklistTokenFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for BlacklistedToken.
+   * The delegate class that acts as a "Promise-like" for BlacklistToken.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__BlacklistedTokenClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__BlacklistTokenClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2467,376 +2491,424 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the BlacklistedToken model
+   * Fields of the BlacklistToken model
    */
-  interface BlacklistedTokenFieldRefs {
-    readonly id: FieldRef<"BlacklistedToken", 'String'>
-    readonly token: FieldRef<"BlacklistedToken", 'String'>
-    readonly expiresAt: FieldRef<"BlacklistedToken", 'DateTime'>
-    readonly createdAt: FieldRef<"BlacklistedToken", 'DateTime'>
+  interface BlacklistTokenFieldRefs {
+    readonly id: FieldRef<"BlacklistToken", 'String'>
+    readonly userId: FieldRef<"BlacklistToken", 'String'>
+    readonly access_token: FieldRef<"BlacklistToken", 'String'>
+    readonly expires_at: FieldRef<"BlacklistToken", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * BlacklistedToken findUnique
+   * BlacklistToken findUnique
    */
-  export type BlacklistedTokenFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type BlacklistTokenFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the BlacklistedToken
+     * Select specific fields to fetch from the BlacklistToken
      */
-    select?: BlacklistedTokenSelect<ExtArgs> | null
+    select?: BlacklistTokenSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the BlacklistedToken
+     * Omit specific fields from the BlacklistToken
      */
-    omit?: BlacklistedTokenOmit<ExtArgs> | null
+    omit?: BlacklistTokenOmit<ExtArgs> | null
     /**
-     * Filter, which BlacklistedToken to fetch.
+     * Choose, which related nodes to fetch as well
      */
-    where: BlacklistedTokenWhereUniqueInput
+    include?: BlacklistTokenInclude<ExtArgs> | null
+    /**
+     * Filter, which BlacklistToken to fetch.
+     */
+    where: BlacklistTokenWhereUniqueInput
   }
 
   /**
-   * BlacklistedToken findUniqueOrThrow
+   * BlacklistToken findUniqueOrThrow
    */
-  export type BlacklistedTokenFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type BlacklistTokenFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the BlacklistedToken
+     * Select specific fields to fetch from the BlacklistToken
      */
-    select?: BlacklistedTokenSelect<ExtArgs> | null
+    select?: BlacklistTokenSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the BlacklistedToken
+     * Omit specific fields from the BlacklistToken
      */
-    omit?: BlacklistedTokenOmit<ExtArgs> | null
+    omit?: BlacklistTokenOmit<ExtArgs> | null
     /**
-     * Filter, which BlacklistedToken to fetch.
+     * Choose, which related nodes to fetch as well
      */
-    where: BlacklistedTokenWhereUniqueInput
+    include?: BlacklistTokenInclude<ExtArgs> | null
+    /**
+     * Filter, which BlacklistToken to fetch.
+     */
+    where: BlacklistTokenWhereUniqueInput
   }
 
   /**
-   * BlacklistedToken findFirst
+   * BlacklistToken findFirst
    */
-  export type BlacklistedTokenFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type BlacklistTokenFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the BlacklistedToken
+     * Select specific fields to fetch from the BlacklistToken
      */
-    select?: BlacklistedTokenSelect<ExtArgs> | null
+    select?: BlacklistTokenSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the BlacklistedToken
+     * Omit specific fields from the BlacklistToken
      */
-    omit?: BlacklistedTokenOmit<ExtArgs> | null
+    omit?: BlacklistTokenOmit<ExtArgs> | null
     /**
-     * Filter, which BlacklistedToken to fetch.
+     * Choose, which related nodes to fetch as well
      */
-    where?: BlacklistedTokenWhereInput
+    include?: BlacklistTokenInclude<ExtArgs> | null
+    /**
+     * Filter, which BlacklistToken to fetch.
+     */
+    where?: BlacklistTokenWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of BlacklistedTokens to fetch.
+     * Determine the order of BlacklistTokens to fetch.
      */
-    orderBy?: BlacklistedTokenOrderByWithRelationInput | BlacklistedTokenOrderByWithRelationInput[]
+    orderBy?: BlacklistTokenOrderByWithRelationInput | BlacklistTokenOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for BlacklistedTokens.
+     * Sets the position for searching for BlacklistTokens.
      */
-    cursor?: BlacklistedTokenWhereUniqueInput
+    cursor?: BlacklistTokenWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` BlacklistedTokens from the position of the cursor.
+     * Take `±n` BlacklistTokens from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` BlacklistedTokens.
+     * Skip the first `n` BlacklistTokens.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of BlacklistedTokens.
+     * Filter by unique combinations of BlacklistTokens.
      */
-    distinct?: BlacklistedTokenScalarFieldEnum | BlacklistedTokenScalarFieldEnum[]
+    distinct?: BlacklistTokenScalarFieldEnum | BlacklistTokenScalarFieldEnum[]
   }
 
   /**
-   * BlacklistedToken findFirstOrThrow
+   * BlacklistToken findFirstOrThrow
    */
-  export type BlacklistedTokenFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type BlacklistTokenFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the BlacklistedToken
+     * Select specific fields to fetch from the BlacklistToken
      */
-    select?: BlacklistedTokenSelect<ExtArgs> | null
+    select?: BlacklistTokenSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the BlacklistedToken
+     * Omit specific fields from the BlacklistToken
      */
-    omit?: BlacklistedTokenOmit<ExtArgs> | null
+    omit?: BlacklistTokenOmit<ExtArgs> | null
     /**
-     * Filter, which BlacklistedToken to fetch.
+     * Choose, which related nodes to fetch as well
      */
-    where?: BlacklistedTokenWhereInput
+    include?: BlacklistTokenInclude<ExtArgs> | null
+    /**
+     * Filter, which BlacklistToken to fetch.
+     */
+    where?: BlacklistTokenWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of BlacklistedTokens to fetch.
+     * Determine the order of BlacklistTokens to fetch.
      */
-    orderBy?: BlacklistedTokenOrderByWithRelationInput | BlacklistedTokenOrderByWithRelationInput[]
+    orderBy?: BlacklistTokenOrderByWithRelationInput | BlacklistTokenOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for BlacklistedTokens.
+     * Sets the position for searching for BlacklistTokens.
      */
-    cursor?: BlacklistedTokenWhereUniqueInput
+    cursor?: BlacklistTokenWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` BlacklistedTokens from the position of the cursor.
+     * Take `±n` BlacklistTokens from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` BlacklistedTokens.
+     * Skip the first `n` BlacklistTokens.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of BlacklistedTokens.
+     * Filter by unique combinations of BlacklistTokens.
      */
-    distinct?: BlacklistedTokenScalarFieldEnum | BlacklistedTokenScalarFieldEnum[]
+    distinct?: BlacklistTokenScalarFieldEnum | BlacklistTokenScalarFieldEnum[]
   }
 
   /**
-   * BlacklistedToken findMany
+   * BlacklistToken findMany
    */
-  export type BlacklistedTokenFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type BlacklistTokenFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the BlacklistedToken
+     * Select specific fields to fetch from the BlacklistToken
      */
-    select?: BlacklistedTokenSelect<ExtArgs> | null
+    select?: BlacklistTokenSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the BlacklistedToken
+     * Omit specific fields from the BlacklistToken
      */
-    omit?: BlacklistedTokenOmit<ExtArgs> | null
+    omit?: BlacklistTokenOmit<ExtArgs> | null
     /**
-     * Filter, which BlacklistedTokens to fetch.
+     * Choose, which related nodes to fetch as well
      */
-    where?: BlacklistedTokenWhereInput
+    include?: BlacklistTokenInclude<ExtArgs> | null
+    /**
+     * Filter, which BlacklistTokens to fetch.
+     */
+    where?: BlacklistTokenWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of BlacklistedTokens to fetch.
+     * Determine the order of BlacklistTokens to fetch.
      */
-    orderBy?: BlacklistedTokenOrderByWithRelationInput | BlacklistedTokenOrderByWithRelationInput[]
+    orderBy?: BlacklistTokenOrderByWithRelationInput | BlacklistTokenOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing BlacklistedTokens.
+     * Sets the position for listing BlacklistTokens.
      */
-    cursor?: BlacklistedTokenWhereUniqueInput
+    cursor?: BlacklistTokenWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` BlacklistedTokens from the position of the cursor.
+     * Take `±n` BlacklistTokens from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` BlacklistedTokens.
+     * Skip the first `n` BlacklistTokens.
      */
     skip?: number
-    distinct?: BlacklistedTokenScalarFieldEnum | BlacklistedTokenScalarFieldEnum[]
+    distinct?: BlacklistTokenScalarFieldEnum | BlacklistTokenScalarFieldEnum[]
   }
 
   /**
-   * BlacklistedToken create
+   * BlacklistToken create
    */
-  export type BlacklistedTokenCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type BlacklistTokenCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the BlacklistedToken
+     * Select specific fields to fetch from the BlacklistToken
      */
-    select?: BlacklistedTokenSelect<ExtArgs> | null
+    select?: BlacklistTokenSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the BlacklistedToken
+     * Omit specific fields from the BlacklistToken
      */
-    omit?: BlacklistedTokenOmit<ExtArgs> | null
+    omit?: BlacklistTokenOmit<ExtArgs> | null
     /**
-     * The data needed to create a BlacklistedToken.
+     * Choose, which related nodes to fetch as well
      */
-    data: XOR<BlacklistedTokenCreateInput, BlacklistedTokenUncheckedCreateInput>
+    include?: BlacklistTokenInclude<ExtArgs> | null
+    /**
+     * The data needed to create a BlacklistToken.
+     */
+    data: XOR<BlacklistTokenCreateInput, BlacklistTokenUncheckedCreateInput>
   }
 
   /**
-   * BlacklistedToken createMany
+   * BlacklistToken createMany
    */
-  export type BlacklistedTokenCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type BlacklistTokenCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many BlacklistedTokens.
+     * The data used to create many BlacklistTokens.
      */
-    data: BlacklistedTokenCreateManyInput | BlacklistedTokenCreateManyInput[]
+    data: BlacklistTokenCreateManyInput | BlacklistTokenCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * BlacklistedToken createManyAndReturn
+   * BlacklistToken createManyAndReturn
    */
-  export type BlacklistedTokenCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type BlacklistTokenCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the BlacklistedToken
+     * Select specific fields to fetch from the BlacklistToken
      */
-    select?: BlacklistedTokenSelectCreateManyAndReturn<ExtArgs> | null
+    select?: BlacklistTokenSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the BlacklistedToken
+     * Omit specific fields from the BlacklistToken
      */
-    omit?: BlacklistedTokenOmit<ExtArgs> | null
+    omit?: BlacklistTokenOmit<ExtArgs> | null
     /**
-     * The data used to create many BlacklistedTokens.
+     * The data used to create many BlacklistTokens.
      */
-    data: BlacklistedTokenCreateManyInput | BlacklistedTokenCreateManyInput[]
+    data: BlacklistTokenCreateManyInput | BlacklistTokenCreateManyInput[]
     skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BlacklistTokenIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * BlacklistedToken update
+   * BlacklistToken update
    */
-  export type BlacklistedTokenUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type BlacklistTokenUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the BlacklistedToken
+     * Select specific fields to fetch from the BlacklistToken
      */
-    select?: BlacklistedTokenSelect<ExtArgs> | null
+    select?: BlacklistTokenSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the BlacklistedToken
+     * Omit specific fields from the BlacklistToken
      */
-    omit?: BlacklistedTokenOmit<ExtArgs> | null
+    omit?: BlacklistTokenOmit<ExtArgs> | null
     /**
-     * The data needed to update a BlacklistedToken.
+     * Choose, which related nodes to fetch as well
      */
-    data: XOR<BlacklistedTokenUpdateInput, BlacklistedTokenUncheckedUpdateInput>
+    include?: BlacklistTokenInclude<ExtArgs> | null
     /**
-     * Choose, which BlacklistedToken to update.
+     * The data needed to update a BlacklistToken.
      */
-    where: BlacklistedTokenWhereUniqueInput
+    data: XOR<BlacklistTokenUpdateInput, BlacklistTokenUncheckedUpdateInput>
+    /**
+     * Choose, which BlacklistToken to update.
+     */
+    where: BlacklistTokenWhereUniqueInput
   }
 
   /**
-   * BlacklistedToken updateMany
+   * BlacklistToken updateMany
    */
-  export type BlacklistedTokenUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type BlacklistTokenUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update BlacklistedTokens.
+     * The data used to update BlacklistTokens.
      */
-    data: XOR<BlacklistedTokenUpdateManyMutationInput, BlacklistedTokenUncheckedUpdateManyInput>
+    data: XOR<BlacklistTokenUpdateManyMutationInput, BlacklistTokenUncheckedUpdateManyInput>
     /**
-     * Filter which BlacklistedTokens to update
+     * Filter which BlacklistTokens to update
      */
-    where?: BlacklistedTokenWhereInput
+    where?: BlacklistTokenWhereInput
     /**
-     * Limit how many BlacklistedTokens to update.
+     * Limit how many BlacklistTokens to update.
      */
     limit?: number
   }
 
   /**
-   * BlacklistedToken updateManyAndReturn
+   * BlacklistToken updateManyAndReturn
    */
-  export type BlacklistedTokenUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type BlacklistTokenUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the BlacklistedToken
+     * Select specific fields to fetch from the BlacklistToken
      */
-    select?: BlacklistedTokenSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: BlacklistTokenSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the BlacklistedToken
+     * Omit specific fields from the BlacklistToken
      */
-    omit?: BlacklistedTokenOmit<ExtArgs> | null
+    omit?: BlacklistTokenOmit<ExtArgs> | null
     /**
-     * The data used to update BlacklistedTokens.
+     * The data used to update BlacklistTokens.
      */
-    data: XOR<BlacklistedTokenUpdateManyMutationInput, BlacklistedTokenUncheckedUpdateManyInput>
+    data: XOR<BlacklistTokenUpdateManyMutationInput, BlacklistTokenUncheckedUpdateManyInput>
     /**
-     * Filter which BlacklistedTokens to update
+     * Filter which BlacklistTokens to update
      */
-    where?: BlacklistedTokenWhereInput
+    where?: BlacklistTokenWhereInput
     /**
-     * Limit how many BlacklistedTokens to update.
+     * Limit how many BlacklistTokens to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BlacklistTokenIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * BlacklistToken upsert
+   */
+  export type BlacklistTokenUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BlacklistToken
+     */
+    select?: BlacklistTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BlacklistToken
+     */
+    omit?: BlacklistTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BlacklistTokenInclude<ExtArgs> | null
+    /**
+     * The filter to search for the BlacklistToken to update in case it exists.
+     */
+    where: BlacklistTokenWhereUniqueInput
+    /**
+     * In case the BlacklistToken found by the `where` argument doesn't exist, create a new BlacklistToken with this data.
+     */
+    create: XOR<BlacklistTokenCreateInput, BlacklistTokenUncheckedCreateInput>
+    /**
+     * In case the BlacklistToken was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<BlacklistTokenUpdateInput, BlacklistTokenUncheckedUpdateInput>
+  }
+
+  /**
+   * BlacklistToken delete
+   */
+  export type BlacklistTokenDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BlacklistToken
+     */
+    select?: BlacklistTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BlacklistToken
+     */
+    omit?: BlacklistTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BlacklistTokenInclude<ExtArgs> | null
+    /**
+     * Filter which BlacklistToken to delete.
+     */
+    where: BlacklistTokenWhereUniqueInput
+  }
+
+  /**
+   * BlacklistToken deleteMany
+   */
+  export type BlacklistTokenDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BlacklistTokens to delete
+     */
+    where?: BlacklistTokenWhereInput
+    /**
+     * Limit how many BlacklistTokens to delete.
      */
     limit?: number
   }
 
   /**
-   * BlacklistedToken upsert
+   * BlacklistToken without action
    */
-  export type BlacklistedTokenUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type BlacklistTokenDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the BlacklistedToken
+     * Select specific fields to fetch from the BlacklistToken
      */
-    select?: BlacklistedTokenSelect<ExtArgs> | null
+    select?: BlacklistTokenSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the BlacklistedToken
+     * Omit specific fields from the BlacklistToken
      */
-    omit?: BlacklistedTokenOmit<ExtArgs> | null
+    omit?: BlacklistTokenOmit<ExtArgs> | null
     /**
-     * The filter to search for the BlacklistedToken to update in case it exists.
+     * Choose, which related nodes to fetch as well
      */
-    where: BlacklistedTokenWhereUniqueInput
-    /**
-     * In case the BlacklistedToken found by the `where` argument doesn't exist, create a new BlacklistedToken with this data.
-     */
-    create: XOR<BlacklistedTokenCreateInput, BlacklistedTokenUncheckedCreateInput>
-    /**
-     * In case the BlacklistedToken was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<BlacklistedTokenUpdateInput, BlacklistedTokenUncheckedUpdateInput>
-  }
-
-  /**
-   * BlacklistedToken delete
-   */
-  export type BlacklistedTokenDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the BlacklistedToken
-     */
-    select?: BlacklistedTokenSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the BlacklistedToken
-     */
-    omit?: BlacklistedTokenOmit<ExtArgs> | null
-    /**
-     * Filter which BlacklistedToken to delete.
-     */
-    where: BlacklistedTokenWhereUniqueInput
-  }
-
-  /**
-   * BlacklistedToken deleteMany
-   */
-  export type BlacklistedTokenDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which BlacklistedTokens to delete
-     */
-    where?: BlacklistedTokenWhereInput
-    /**
-     * Limit how many BlacklistedTokens to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * BlacklistedToken without action
-   */
-  export type BlacklistedTokenDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the BlacklistedToken
-     */
-    select?: BlacklistedTokenSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the BlacklistedToken
-     */
-    omit?: BlacklistedTokenOmit<ExtArgs> | null
+    include?: BlacklistTokenInclude<ExtArgs> | null
   }
 
 
@@ -3074,6 +3146,7 @@ export namespace Prisma {
     orders?: boolean | User$ordersArgs<ExtArgs>
     invoices?: boolean | User$invoicesArgs<ExtArgs>
     TeamMember?: boolean | User$TeamMemberArgs<ExtArgs>
+    BlacklistToken?: boolean | User$BlacklistTokenArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -3133,6 +3206,7 @@ export namespace Prisma {
     orders?: boolean | User$ordersArgs<ExtArgs>
     invoices?: boolean | User$invoicesArgs<ExtArgs>
     TeamMember?: boolean | User$TeamMemberArgs<ExtArgs>
+    BlacklistToken?: boolean | User$BlacklistTokenArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -3147,6 +3221,7 @@ export namespace Prisma {
       orders: Prisma.$OrderPayload<ExtArgs>[]
       invoices: Prisma.$InvoicePayload<ExtArgs>[]
       TeamMember: Prisma.$TeamMemberPayload<ExtArgs>[]
+      BlacklistToken: Prisma.$BlacklistTokenPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -3562,6 +3637,7 @@ export namespace Prisma {
     orders<T extends User$ordersArgs<ExtArgs> = {}>(args?: Subset<T, User$ordersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     invoices<T extends User$invoicesArgs<ExtArgs> = {}>(args?: Subset<T, User$invoicesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$InvoicePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     TeamMember<T extends User$TeamMemberArgs<ExtArgs> = {}>(args?: Subset<T, User$TeamMemberArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeamMemberPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    BlacklistToken<T extends User$BlacklistTokenArgs<ExtArgs> = {}>(args?: Subset<T, User$BlacklistTokenArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BlacklistTokenPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4133,6 +4209,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: TeamMemberScalarFieldEnum | TeamMemberScalarFieldEnum[]
+  }
+
+  /**
+   * User.BlacklistToken
+   */
+  export type User$BlacklistTokenArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BlacklistToken
+     */
+    select?: BlacklistTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BlacklistToken
+     */
+    omit?: BlacklistTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BlacklistTokenInclude<ExtArgs> | null
+    where?: BlacklistTokenWhereInput
+    orderBy?: BlacklistTokenOrderByWithRelationInput | BlacklistTokenOrderByWithRelationInput[]
+    cursor?: BlacklistTokenWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: BlacklistTokenScalarFieldEnum | BlacklistTokenScalarFieldEnum[]
   }
 
   /**
@@ -6263,29 +6363,19 @@ export namespace Prisma {
 
   export type AggregateAccount = {
     _count: AccountCountAggregateOutputType | null
-    _avg: AccountAvgAggregateOutputType | null
-    _sum: AccountSumAggregateOutputType | null
     _min: AccountMinAggregateOutputType | null
     _max: AccountMaxAggregateOutputType | null
-  }
-
-  export type AccountAvgAggregateOutputType = {
-    expires_at: number | null
-  }
-
-  export type AccountSumAggregateOutputType = {
-    expires_at: number | null
   }
 
   export type AccountMinAggregateOutputType = {
     id: string | null
     userId: string | null
     type: string | null
+    access_token: string | null
+    expires_at: Date | null
     provider: string | null
     providerAccountId: string | null
     refresh_token: string | null
-    access_token: string | null
-    expires_at: number | null
     token_type: string | null
     scope: string | null
     id_token: string | null
@@ -6296,11 +6386,11 @@ export namespace Prisma {
     id: string | null
     userId: string | null
     type: string | null
+    access_token: string | null
+    expires_at: Date | null
     provider: string | null
     providerAccountId: string | null
     refresh_token: string | null
-    access_token: string | null
-    expires_at: number | null
     token_type: string | null
     scope: string | null
     id_token: string | null
@@ -6311,11 +6401,11 @@ export namespace Prisma {
     id: number
     userId: number
     type: number
+    access_token: number
+    expires_at: number
     provider: number
     providerAccountId: number
     refresh_token: number
-    access_token: number
-    expires_at: number
     token_type: number
     scope: number
     id_token: number
@@ -6324,23 +6414,15 @@ export namespace Prisma {
   }
 
 
-  export type AccountAvgAggregateInputType = {
-    expires_at?: true
-  }
-
-  export type AccountSumAggregateInputType = {
-    expires_at?: true
-  }
-
   export type AccountMinAggregateInputType = {
     id?: true
     userId?: true
     type?: true
+    access_token?: true
+    expires_at?: true
     provider?: true
     providerAccountId?: true
     refresh_token?: true
-    access_token?: true
-    expires_at?: true
     token_type?: true
     scope?: true
     id_token?: true
@@ -6351,11 +6433,11 @@ export namespace Prisma {
     id?: true
     userId?: true
     type?: true
+    access_token?: true
+    expires_at?: true
     provider?: true
     providerAccountId?: true
     refresh_token?: true
-    access_token?: true
-    expires_at?: true
     token_type?: true
     scope?: true
     id_token?: true
@@ -6366,11 +6448,11 @@ export namespace Prisma {
     id?: true
     userId?: true
     type?: true
+    access_token?: true
+    expires_at?: true
     provider?: true
     providerAccountId?: true
     refresh_token?: true
-    access_token?: true
-    expires_at?: true
     token_type?: true
     scope?: true
     id_token?: true
@@ -6416,18 +6498,6 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Select which fields to average
-    **/
-    _avg?: AccountAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: AccountSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
      * Select which fields to find the minimum value
     **/
     _min?: AccountMinAggregateInputType
@@ -6458,8 +6528,6 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: AccountCountAggregateInputType | true
-    _avg?: AccountAvgAggregateInputType
-    _sum?: AccountSumAggregateInputType
     _min?: AccountMinAggregateInputType
     _max?: AccountMaxAggregateInputType
   }
@@ -6467,19 +6535,17 @@ export namespace Prisma {
   export type AccountGroupByOutputType = {
     id: string
     userId: string
-    type: string
-    provider: string
-    providerAccountId: string
-    refresh_token: string | null
+    type: string | null
     access_token: string | null
-    expires_at: number | null
+    expires_at: Date
+    provider: string | null
+    providerAccountId: string | null
+    refresh_token: string | null
     token_type: string | null
     scope: string | null
     id_token: string | null
     session_state: string | null
     _count: AccountCountAggregateOutputType | null
-    _avg: AccountAvgAggregateOutputType | null
-    _sum: AccountSumAggregateOutputType | null
     _min: AccountMinAggregateOutputType | null
     _max: AccountMaxAggregateOutputType | null
   }
@@ -6502,11 +6568,11 @@ export namespace Prisma {
     id?: boolean
     userId?: boolean
     type?: boolean
+    access_token?: boolean
+    expires_at?: boolean
     provider?: boolean
     providerAccountId?: boolean
     refresh_token?: boolean
-    access_token?: boolean
-    expires_at?: boolean
     token_type?: boolean
     scope?: boolean
     id_token?: boolean
@@ -6518,11 +6584,11 @@ export namespace Prisma {
     id?: boolean
     userId?: boolean
     type?: boolean
+    access_token?: boolean
+    expires_at?: boolean
     provider?: boolean
     providerAccountId?: boolean
     refresh_token?: boolean
-    access_token?: boolean
-    expires_at?: boolean
     token_type?: boolean
     scope?: boolean
     id_token?: boolean
@@ -6534,11 +6600,11 @@ export namespace Prisma {
     id?: boolean
     userId?: boolean
     type?: boolean
+    access_token?: boolean
+    expires_at?: boolean
     provider?: boolean
     providerAccountId?: boolean
     refresh_token?: boolean
-    access_token?: boolean
-    expires_at?: boolean
     token_type?: boolean
     scope?: boolean
     id_token?: boolean
@@ -6550,18 +6616,18 @@ export namespace Prisma {
     id?: boolean
     userId?: boolean
     type?: boolean
+    access_token?: boolean
+    expires_at?: boolean
     provider?: boolean
     providerAccountId?: boolean
     refresh_token?: boolean
-    access_token?: boolean
-    expires_at?: boolean
     token_type?: boolean
     scope?: boolean
     id_token?: boolean
     session_state?: boolean
   }
 
-  export type AccountOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "type" | "provider" | "providerAccountId" | "refresh_token" | "access_token" | "expires_at" | "token_type" | "scope" | "id_token" | "session_state", ExtArgs["result"]["account"]>
+  export type AccountOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "type" | "access_token" | "expires_at" | "provider" | "providerAccountId" | "refresh_token" | "token_type" | "scope" | "id_token" | "session_state", ExtArgs["result"]["account"]>
   export type AccountInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -6580,12 +6646,12 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: string
       userId: string
-      type: string
-      provider: string
-      providerAccountId: string
-      refresh_token: string | null
+      type: string | null
       access_token: string | null
-      expires_at: number | null
+      expires_at: Date
+      provider: string | null
+      providerAccountId: string | null
+      refresh_token: string | null
       token_type: string | null
       scope: string | null
       id_token: string | null
@@ -7017,11 +7083,11 @@ export namespace Prisma {
     readonly id: FieldRef<"Account", 'String'>
     readonly userId: FieldRef<"Account", 'String'>
     readonly type: FieldRef<"Account", 'String'>
+    readonly access_token: FieldRef<"Account", 'String'>
+    readonly expires_at: FieldRef<"Account", 'DateTime'>
     readonly provider: FieldRef<"Account", 'String'>
     readonly providerAccountId: FieldRef<"Account", 'String'>
     readonly refresh_token: FieldRef<"Account", 'String'>
-    readonly access_token: FieldRef<"Account", 'String'>
-    readonly expires_at: FieldRef<"Account", 'Int'>
     readonly token_type: FieldRef<"Account", 'String'>
     readonly scope: FieldRef<"Account", 'String'>
     readonly id_token: FieldRef<"Account", 'String'>
@@ -12228,14 +12294,14 @@ export namespace Prisma {
   export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-  export const BlacklistedTokenScalarFieldEnum: {
+  export const BlacklistTokenScalarFieldEnum: {
     id: 'id',
-    token: 'token',
-    expiresAt: 'expiresAt',
-    createdAt: 'createdAt'
+    userId: 'userId',
+    access_token: 'access_token',
+    expires_at: 'expires_at'
   };
 
-  export type BlacklistedTokenScalarFieldEnum = (typeof BlacklistedTokenScalarFieldEnum)[keyof typeof BlacklistedTokenScalarFieldEnum]
+  export type BlacklistTokenScalarFieldEnum = (typeof BlacklistTokenScalarFieldEnum)[keyof typeof BlacklistTokenScalarFieldEnum]
 
 
   export const UserScalarFieldEnum: {
@@ -12282,11 +12348,11 @@ export namespace Prisma {
     id: 'id',
     userId: 'userId',
     type: 'type',
+    access_token: 'access_token',
+    expires_at: 'expires_at',
     provider: 'provider',
     providerAccountId: 'providerAccountId',
     refresh_token: 'refresh_token',
-    access_token: 'access_token',
-    expires_at: 'expires_at',
     token_type: 'token_type',
     scope: 'scope',
     id_token: 'id_token',
@@ -12471,20 +12537,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Int'
-   */
-  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
-    
-
-
-  /**
-   * Reference to a field of type 'Int[]'
-   */
-  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
-    
-
-
-  /**
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -12509,6 +12561,20 @@ export namespace Prisma {
    * Reference to a field of type 'ProjectStatus[]'
    */
   export type ListEnumProjectStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ProjectStatus[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'Int'
+   */
+  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+    
+
+
+  /**
+   * Reference to a field of type 'Int[]'
+   */
+  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
     
 
 
@@ -12585,51 +12651,54 @@ export namespace Prisma {
    */
 
 
-  export type BlacklistedTokenWhereInput = {
-    AND?: BlacklistedTokenWhereInput | BlacklistedTokenWhereInput[]
-    OR?: BlacklistedTokenWhereInput[]
-    NOT?: BlacklistedTokenWhereInput | BlacklistedTokenWhereInput[]
-    id?: StringFilter<"BlacklistedToken"> | string
-    token?: StringFilter<"BlacklistedToken"> | string
-    expiresAt?: DateTimeFilter<"BlacklistedToken"> | Date | string
-    createdAt?: DateTimeFilter<"BlacklistedToken"> | Date | string
+  export type BlacklistTokenWhereInput = {
+    AND?: BlacklistTokenWhereInput | BlacklistTokenWhereInput[]
+    OR?: BlacklistTokenWhereInput[]
+    NOT?: BlacklistTokenWhereInput | BlacklistTokenWhereInput[]
+    id?: StringFilter<"BlacklistToken"> | string
+    userId?: StringFilter<"BlacklistToken"> | string
+    access_token?: StringFilter<"BlacklistToken"> | string
+    expires_at?: DateTimeFilter<"BlacklistToken"> | Date | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
-  export type BlacklistedTokenOrderByWithRelationInput = {
+  export type BlacklistTokenOrderByWithRelationInput = {
     id?: SortOrder
-    token?: SortOrder
-    expiresAt?: SortOrder
-    createdAt?: SortOrder
+    userId?: SortOrder
+    access_token?: SortOrder
+    expires_at?: SortOrder
+    user?: UserOrderByWithRelationInput
   }
 
-  export type BlacklistedTokenWhereUniqueInput = Prisma.AtLeast<{
+  export type BlacklistTokenWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    token?: string
-    AND?: BlacklistedTokenWhereInput | BlacklistedTokenWhereInput[]
-    OR?: BlacklistedTokenWhereInput[]
-    NOT?: BlacklistedTokenWhereInput | BlacklistedTokenWhereInput[]
-    expiresAt?: DateTimeFilter<"BlacklistedToken"> | Date | string
-    createdAt?: DateTimeFilter<"BlacklistedToken"> | Date | string
-  }, "id" | "token">
+    AND?: BlacklistTokenWhereInput | BlacklistTokenWhereInput[]
+    OR?: BlacklistTokenWhereInput[]
+    NOT?: BlacklistTokenWhereInput | BlacklistTokenWhereInput[]
+    userId?: StringFilter<"BlacklistToken"> | string
+    access_token?: StringFilter<"BlacklistToken"> | string
+    expires_at?: DateTimeFilter<"BlacklistToken"> | Date | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+  }, "id">
 
-  export type BlacklistedTokenOrderByWithAggregationInput = {
+  export type BlacklistTokenOrderByWithAggregationInput = {
     id?: SortOrder
-    token?: SortOrder
-    expiresAt?: SortOrder
-    createdAt?: SortOrder
-    _count?: BlacklistedTokenCountOrderByAggregateInput
-    _max?: BlacklistedTokenMaxOrderByAggregateInput
-    _min?: BlacklistedTokenMinOrderByAggregateInput
+    userId?: SortOrder
+    access_token?: SortOrder
+    expires_at?: SortOrder
+    _count?: BlacklistTokenCountOrderByAggregateInput
+    _max?: BlacklistTokenMaxOrderByAggregateInput
+    _min?: BlacklistTokenMinOrderByAggregateInput
   }
 
-  export type BlacklistedTokenScalarWhereWithAggregatesInput = {
-    AND?: BlacklistedTokenScalarWhereWithAggregatesInput | BlacklistedTokenScalarWhereWithAggregatesInput[]
-    OR?: BlacklistedTokenScalarWhereWithAggregatesInput[]
-    NOT?: BlacklistedTokenScalarWhereWithAggregatesInput | BlacklistedTokenScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"BlacklistedToken"> | string
-    token?: StringWithAggregatesFilter<"BlacklistedToken"> | string
-    expiresAt?: DateTimeWithAggregatesFilter<"BlacklistedToken"> | Date | string
-    createdAt?: DateTimeWithAggregatesFilter<"BlacklistedToken"> | Date | string
+  export type BlacklistTokenScalarWhereWithAggregatesInput = {
+    AND?: BlacklistTokenScalarWhereWithAggregatesInput | BlacklistTokenScalarWhereWithAggregatesInput[]
+    OR?: BlacklistTokenScalarWhereWithAggregatesInput[]
+    NOT?: BlacklistTokenScalarWhereWithAggregatesInput | BlacklistTokenScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"BlacklistToken"> | string
+    userId?: StringWithAggregatesFilter<"BlacklistToken"> | string
+    access_token?: StringWithAggregatesFilter<"BlacklistToken"> | string
+    expires_at?: DateTimeWithAggregatesFilter<"BlacklistToken"> | Date | string
   }
 
   export type UserWhereInput = {
@@ -12655,6 +12724,7 @@ export namespace Prisma {
     orders?: OrderListRelationFilter
     invoices?: InvoiceListRelationFilter
     TeamMember?: TeamMemberListRelationFilter
+    BlacklistToken?: BlacklistTokenListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
@@ -12677,6 +12747,7 @@ export namespace Prisma {
     orders?: OrderOrderByRelationAggregateInput
     invoices?: InvoiceOrderByRelationAggregateInput
     TeamMember?: TeamMemberOrderByRelationAggregateInput
+    BlacklistToken?: BlacklistTokenOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -12702,6 +12773,7 @@ export namespace Prisma {
     orders?: OrderListRelationFilter
     invoices?: InvoiceListRelationFilter
     TeamMember?: TeamMemberListRelationFilter
+    BlacklistToken?: BlacklistTokenListRelationFilter
   }, "id" | "email">
 
   export type UserOrderByWithAggregationInput = {
@@ -12853,12 +12925,12 @@ export namespace Prisma {
     NOT?: AccountWhereInput | AccountWhereInput[]
     id?: StringFilter<"Account"> | string
     userId?: StringFilter<"Account"> | string
-    type?: StringFilter<"Account"> | string
-    provider?: StringFilter<"Account"> | string
-    providerAccountId?: StringFilter<"Account"> | string
-    refresh_token?: StringNullableFilter<"Account"> | string | null
+    type?: StringNullableFilter<"Account"> | string | null
     access_token?: StringNullableFilter<"Account"> | string | null
-    expires_at?: IntNullableFilter<"Account"> | number | null
+    expires_at?: DateTimeFilter<"Account"> | Date | string
+    provider?: StringNullableFilter<"Account"> | string | null
+    providerAccountId?: StringNullableFilter<"Account"> | string | null
+    refresh_token?: StringNullableFilter<"Account"> | string | null
     token_type?: StringNullableFilter<"Account"> | string | null
     scope?: StringNullableFilter<"Account"> | string | null
     id_token?: StringNullableFilter<"Account"> | string | null
@@ -12869,12 +12941,12 @@ export namespace Prisma {
   export type AccountOrderByWithRelationInput = {
     id?: SortOrder
     userId?: SortOrder
-    type?: SortOrder
-    provider?: SortOrder
-    providerAccountId?: SortOrder
-    refresh_token?: SortOrderInput | SortOrder
+    type?: SortOrderInput | SortOrder
     access_token?: SortOrderInput | SortOrder
-    expires_at?: SortOrderInput | SortOrder
+    expires_at?: SortOrder
+    provider?: SortOrderInput | SortOrder
+    providerAccountId?: SortOrderInput | SortOrder
+    refresh_token?: SortOrderInput | SortOrder
     token_type?: SortOrderInput | SortOrder
     scope?: SortOrderInput | SortOrder
     id_token?: SortOrderInput | SortOrder
@@ -12889,12 +12961,12 @@ export namespace Prisma {
     OR?: AccountWhereInput[]
     NOT?: AccountWhereInput | AccountWhereInput[]
     userId?: StringFilter<"Account"> | string
-    type?: StringFilter<"Account"> | string
-    provider?: StringFilter<"Account"> | string
-    providerAccountId?: StringFilter<"Account"> | string
-    refresh_token?: StringNullableFilter<"Account"> | string | null
+    type?: StringNullableFilter<"Account"> | string | null
     access_token?: StringNullableFilter<"Account"> | string | null
-    expires_at?: IntNullableFilter<"Account"> | number | null
+    expires_at?: DateTimeFilter<"Account"> | Date | string
+    provider?: StringNullableFilter<"Account"> | string | null
+    providerAccountId?: StringNullableFilter<"Account"> | string | null
+    refresh_token?: StringNullableFilter<"Account"> | string | null
     token_type?: StringNullableFilter<"Account"> | string | null
     scope?: StringNullableFilter<"Account"> | string | null
     id_token?: StringNullableFilter<"Account"> | string | null
@@ -12905,21 +12977,19 @@ export namespace Prisma {
   export type AccountOrderByWithAggregationInput = {
     id?: SortOrder
     userId?: SortOrder
-    type?: SortOrder
-    provider?: SortOrder
-    providerAccountId?: SortOrder
-    refresh_token?: SortOrderInput | SortOrder
+    type?: SortOrderInput | SortOrder
     access_token?: SortOrderInput | SortOrder
-    expires_at?: SortOrderInput | SortOrder
+    expires_at?: SortOrder
+    provider?: SortOrderInput | SortOrder
+    providerAccountId?: SortOrderInput | SortOrder
+    refresh_token?: SortOrderInput | SortOrder
     token_type?: SortOrderInput | SortOrder
     scope?: SortOrderInput | SortOrder
     id_token?: SortOrderInput | SortOrder
     session_state?: SortOrderInput | SortOrder
     _count?: AccountCountOrderByAggregateInput
-    _avg?: AccountAvgOrderByAggregateInput
     _max?: AccountMaxOrderByAggregateInput
     _min?: AccountMinOrderByAggregateInput
-    _sum?: AccountSumOrderByAggregateInput
   }
 
   export type AccountScalarWhereWithAggregatesInput = {
@@ -12928,12 +12998,12 @@ export namespace Prisma {
     NOT?: AccountScalarWhereWithAggregatesInput | AccountScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Account"> | string
     userId?: StringWithAggregatesFilter<"Account"> | string
-    type?: StringWithAggregatesFilter<"Account"> | string
-    provider?: StringWithAggregatesFilter<"Account"> | string
-    providerAccountId?: StringWithAggregatesFilter<"Account"> | string
-    refresh_token?: StringNullableWithAggregatesFilter<"Account"> | string | null
+    type?: StringNullableWithAggregatesFilter<"Account"> | string | null
     access_token?: StringNullableWithAggregatesFilter<"Account"> | string | null
-    expires_at?: IntNullableWithAggregatesFilter<"Account"> | number | null
+    expires_at?: DateTimeWithAggregatesFilter<"Account"> | Date | string
+    provider?: StringNullableWithAggregatesFilter<"Account"> | string | null
+    providerAccountId?: StringNullableWithAggregatesFilter<"Account"> | string | null
+    refresh_token?: StringNullableWithAggregatesFilter<"Account"> | string | null
     token_type?: StringNullableWithAggregatesFilter<"Account"> | string | null
     scope?: StringNullableWithAggregatesFilter<"Account"> | string | null
     id_token?: StringNullableWithAggregatesFilter<"Account"> | string | null
@@ -13293,53 +13363,52 @@ export namespace Prisma {
     role?: StringWithAggregatesFilter<"TeamMember"> | string
   }
 
-  export type BlacklistedTokenCreateInput = {
+  export type BlacklistTokenCreateInput = {
     id?: string
-    token: string
-    expiresAt: Date | string
-    createdAt?: Date | string
+    access_token: string
+    expires_at: Date | string
+    user: UserCreateNestedOneWithoutBlacklistTokenInput
   }
 
-  export type BlacklistedTokenUncheckedCreateInput = {
+  export type BlacklistTokenUncheckedCreateInput = {
     id?: string
-    token: string
-    expiresAt: Date | string
-    createdAt?: Date | string
+    userId: string
+    access_token: string
+    expires_at: Date | string
   }
 
-  export type BlacklistedTokenUpdateInput = {
+  export type BlacklistTokenUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    token?: StringFieldUpdateOperationsInput | string
-    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    access_token?: StringFieldUpdateOperationsInput | string
+    expires_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutBlacklistTokenNestedInput
   }
 
-  export type BlacklistedTokenUncheckedUpdateInput = {
+  export type BlacklistTokenUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    token?: StringFieldUpdateOperationsInput | string
-    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+    access_token?: StringFieldUpdateOperationsInput | string
+    expires_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type BlacklistedTokenCreateManyInput = {
+  export type BlacklistTokenCreateManyInput = {
     id?: string
-    token: string
-    expiresAt: Date | string
-    createdAt?: Date | string
+    userId: string
+    access_token: string
+    expires_at: Date | string
   }
 
-  export type BlacklistedTokenUpdateManyMutationInput = {
+  export type BlacklistTokenUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    token?: StringFieldUpdateOperationsInput | string
-    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    access_token?: StringFieldUpdateOperationsInput | string
+    expires_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type BlacklistedTokenUncheckedUpdateManyInput = {
+  export type BlacklistTokenUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    token?: StringFieldUpdateOperationsInput | string
-    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+    access_token?: StringFieldUpdateOperationsInput | string
+    expires_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type UserCreateInput = {
@@ -13362,6 +13431,7 @@ export namespace Prisma {
     orders?: OrderCreateNestedManyWithoutUserInput
     invoices?: InvoiceCreateNestedManyWithoutClientInput
     TeamMember?: TeamMemberCreateNestedManyWithoutUserInput
+    BlacklistToken?: BlacklistTokenCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateInput = {
@@ -13384,6 +13454,7 @@ export namespace Prisma {
     orders?: OrderUncheckedCreateNestedManyWithoutUserInput
     invoices?: InvoiceUncheckedCreateNestedManyWithoutClientInput
     TeamMember?: TeamMemberUncheckedCreateNestedManyWithoutUserInput
+    BlacklistToken?: BlacklistTokenUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserUpdateInput = {
@@ -13406,6 +13477,7 @@ export namespace Prisma {
     orders?: OrderUpdateManyWithoutUserNestedInput
     invoices?: InvoiceUpdateManyWithoutClientNestedInput
     TeamMember?: TeamMemberUpdateManyWithoutUserNestedInput
+    BlacklistToken?: BlacklistTokenUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
@@ -13428,6 +13500,7 @@ export namespace Prisma {
     orders?: OrderUncheckedUpdateManyWithoutUserNestedInput
     invoices?: InvoiceUncheckedUpdateManyWithoutClientNestedInput
     TeamMember?: TeamMemberUncheckedUpdateManyWithoutUserNestedInput
+    BlacklistToken?: BlacklistTokenUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateManyInput = {
@@ -13583,12 +13656,12 @@ export namespace Prisma {
 
   export type AccountCreateInput = {
     id?: string
-    type: string
-    provider: string
-    providerAccountId: string
-    refresh_token?: string | null
+    type?: string | null
     access_token?: string | null
-    expires_at?: number | null
+    expires_at: Date | string
+    provider?: string | null
+    providerAccountId?: string | null
+    refresh_token?: string | null
     token_type?: string | null
     scope?: string | null
     id_token?: string | null
@@ -13599,12 +13672,12 @@ export namespace Prisma {
   export type AccountUncheckedCreateInput = {
     id?: string
     userId: string
-    type: string
-    provider: string
-    providerAccountId: string
-    refresh_token?: string | null
+    type?: string | null
     access_token?: string | null
-    expires_at?: number | null
+    expires_at: Date | string
+    provider?: string | null
+    providerAccountId?: string | null
+    refresh_token?: string | null
     token_type?: string | null
     scope?: string | null
     id_token?: string | null
@@ -13613,12 +13686,12 @@ export namespace Prisma {
 
   export type AccountUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    provider?: StringFieldUpdateOperationsInput | string
-    providerAccountId?: StringFieldUpdateOperationsInput | string
-    refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: NullableStringFieldUpdateOperationsInput | string | null
     access_token?: NullableStringFieldUpdateOperationsInput | string | null
-    expires_at?: NullableIntFieldUpdateOperationsInput | number | null
+    expires_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    provider?: NullableStringFieldUpdateOperationsInput | string | null
+    providerAccountId?: NullableStringFieldUpdateOperationsInput | string | null
+    refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
     token_type?: NullableStringFieldUpdateOperationsInput | string | null
     scope?: NullableStringFieldUpdateOperationsInput | string | null
     id_token?: NullableStringFieldUpdateOperationsInput | string | null
@@ -13629,12 +13702,12 @@ export namespace Prisma {
   export type AccountUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     userId?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    provider?: StringFieldUpdateOperationsInput | string
-    providerAccountId?: StringFieldUpdateOperationsInput | string
-    refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: NullableStringFieldUpdateOperationsInput | string | null
     access_token?: NullableStringFieldUpdateOperationsInput | string | null
-    expires_at?: NullableIntFieldUpdateOperationsInput | number | null
+    expires_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    provider?: NullableStringFieldUpdateOperationsInput | string | null
+    providerAccountId?: NullableStringFieldUpdateOperationsInput | string | null
+    refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
     token_type?: NullableStringFieldUpdateOperationsInput | string | null
     scope?: NullableStringFieldUpdateOperationsInput | string | null
     id_token?: NullableStringFieldUpdateOperationsInput | string | null
@@ -13644,12 +13717,12 @@ export namespace Prisma {
   export type AccountCreateManyInput = {
     id?: string
     userId: string
-    type: string
-    provider: string
-    providerAccountId: string
-    refresh_token?: string | null
+    type?: string | null
     access_token?: string | null
-    expires_at?: number | null
+    expires_at: Date | string
+    provider?: string | null
+    providerAccountId?: string | null
+    refresh_token?: string | null
     token_type?: string | null
     scope?: string | null
     id_token?: string | null
@@ -13658,12 +13731,12 @@ export namespace Prisma {
 
   export type AccountUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    provider?: StringFieldUpdateOperationsInput | string
-    providerAccountId?: StringFieldUpdateOperationsInput | string
-    refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: NullableStringFieldUpdateOperationsInput | string | null
     access_token?: NullableStringFieldUpdateOperationsInput | string | null
-    expires_at?: NullableIntFieldUpdateOperationsInput | number | null
+    expires_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    provider?: NullableStringFieldUpdateOperationsInput | string | null
+    providerAccountId?: NullableStringFieldUpdateOperationsInput | string | null
+    refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
     token_type?: NullableStringFieldUpdateOperationsInput | string | null
     scope?: NullableStringFieldUpdateOperationsInput | string | null
     id_token?: NullableStringFieldUpdateOperationsInput | string | null
@@ -13673,12 +13746,12 @@ export namespace Prisma {
   export type AccountUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     userId?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    provider?: StringFieldUpdateOperationsInput | string
-    providerAccountId?: StringFieldUpdateOperationsInput | string
-    refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: NullableStringFieldUpdateOperationsInput | string | null
     access_token?: NullableStringFieldUpdateOperationsInput | string | null
-    expires_at?: NullableIntFieldUpdateOperationsInput | number | null
+    expires_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    provider?: NullableStringFieldUpdateOperationsInput | string | null
+    providerAccountId?: NullableStringFieldUpdateOperationsInput | string | null
+    refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
     token_type?: NullableStringFieldUpdateOperationsInput | string | null
     scope?: NullableStringFieldUpdateOperationsInput | string | null
     id_token?: NullableStringFieldUpdateOperationsInput | string | null
@@ -14091,25 +14164,30 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
-  export type BlacklistedTokenCountOrderByAggregateInput = {
-    id?: SortOrder
-    token?: SortOrder
-    expiresAt?: SortOrder
-    createdAt?: SortOrder
+  export type UserScalarRelationFilter = {
+    is?: UserWhereInput
+    isNot?: UserWhereInput
   }
 
-  export type BlacklistedTokenMaxOrderByAggregateInput = {
+  export type BlacklistTokenCountOrderByAggregateInput = {
     id?: SortOrder
-    token?: SortOrder
-    expiresAt?: SortOrder
-    createdAt?: SortOrder
+    userId?: SortOrder
+    access_token?: SortOrder
+    expires_at?: SortOrder
   }
 
-  export type BlacklistedTokenMinOrderByAggregateInput = {
+  export type BlacklistTokenMaxOrderByAggregateInput = {
     id?: SortOrder
-    token?: SortOrder
-    expiresAt?: SortOrder
-    createdAt?: SortOrder
+    userId?: SortOrder
+    access_token?: SortOrder
+    expires_at?: SortOrder
+  }
+
+  export type BlacklistTokenMinOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    access_token?: SortOrder
+    expires_at?: SortOrder
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -14218,6 +14296,12 @@ export namespace Prisma {
     none?: TeamMemberWhereInput
   }
 
+  export type BlacklistTokenListRelationFilter = {
+    every?: BlacklistTokenWhereInput
+    some?: BlacklistTokenWhereInput
+    none?: BlacklistTokenWhereInput
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -14244,6 +14328,10 @@ export namespace Prisma {
   }
 
   export type TeamMemberOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type BlacklistTokenOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -14352,11 +14440,6 @@ export namespace Prisma {
     not?: NestedEnumOrderStatusFilter<$PrismaModel> | $Enums.OrderStatus
   }
 
-  export type UserScalarRelationFilter = {
-    is?: UserWhereInput
-    isNot?: UserWhereInput
-  }
-
   export type OrderCountOrderByAggregateInput = {
     id?: SortOrder
     userId?: SortOrder
@@ -14412,17 +14495,6 @@ export namespace Prisma {
     expires?: SortOrder
   }
 
-  export type IntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
-  }
-
   export type AccountProviderProviderAccountIdCompoundUniqueInput = {
     provider: string
     providerAccountId: string
@@ -14432,30 +14504,26 @@ export namespace Prisma {
     id?: SortOrder
     userId?: SortOrder
     type?: SortOrder
+    access_token?: SortOrder
+    expires_at?: SortOrder
     provider?: SortOrder
     providerAccountId?: SortOrder
     refresh_token?: SortOrder
-    access_token?: SortOrder
-    expires_at?: SortOrder
     token_type?: SortOrder
     scope?: SortOrder
     id_token?: SortOrder
     session_state?: SortOrder
   }
 
-  export type AccountAvgOrderByAggregateInput = {
-    expires_at?: SortOrder
-  }
-
   export type AccountMaxOrderByAggregateInput = {
     id?: SortOrder
     userId?: SortOrder
     type?: SortOrder
+    access_token?: SortOrder
+    expires_at?: SortOrder
     provider?: SortOrder
     providerAccountId?: SortOrder
     refresh_token?: SortOrder
-    access_token?: SortOrder
-    expires_at?: SortOrder
     token_type?: SortOrder
     scope?: SortOrder
     id_token?: SortOrder
@@ -14466,35 +14534,15 @@ export namespace Prisma {
     id?: SortOrder
     userId?: SortOrder
     type?: SortOrder
+    access_token?: SortOrder
+    expires_at?: SortOrder
     provider?: SortOrder
     providerAccountId?: SortOrder
     refresh_token?: SortOrder
-    access_token?: SortOrder
-    expires_at?: SortOrder
     token_type?: SortOrder
     scope?: SortOrder
     id_token?: SortOrder
     session_state?: SortOrder
-  }
-
-  export type AccountSumOrderByAggregateInput = {
-    expires_at?: SortOrder
-  }
-
-  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
   export type FloatNullableFilter<$PrismaModel = never> = {
@@ -14513,6 +14561,17 @@ export namespace Prisma {
     in?: $Enums.ProjectStatus[] | ListEnumProjectStatusFieldRefInput<$PrismaModel>
     notIn?: $Enums.ProjectStatus[] | ListEnumProjectStatusFieldRefInput<$PrismaModel>
     not?: NestedEnumProjectStatusFilter<$PrismaModel> | $Enums.ProjectStatus
+  }
+
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
   export type JsonNullableFilter<$PrismaModel = never> =
     | PatchUndefined<
@@ -14625,6 +14684,22 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumProjectStatusFilter<$PrismaModel>
     _max?: NestedEnumProjectStatusFilter<$PrismaModel>
+  }
+
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
   }
   export type JsonNullableWithAggregatesFilter<$PrismaModel = never> =
     | PatchUndefined<
@@ -14897,12 +14972,26 @@ export namespace Prisma {
     role?: SortOrder
   }
 
+  export type UserCreateNestedOneWithoutBlacklistTokenInput = {
+    create?: XOR<UserCreateWithoutBlacklistTokenInput, UserUncheckedCreateWithoutBlacklistTokenInput>
+    connectOrCreate?: UserCreateOrConnectWithoutBlacklistTokenInput
+    connect?: UserWhereUniqueInput
+  }
+
   export type StringFieldUpdateOperationsInput = {
     set?: string
   }
 
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string
+  }
+
+  export type UserUpdateOneRequiredWithoutBlacklistTokenNestedInput = {
+    create?: XOR<UserCreateWithoutBlacklistTokenInput, UserUncheckedCreateWithoutBlacklistTokenInput>
+    connectOrCreate?: UserCreateOrConnectWithoutBlacklistTokenInput
+    upsert?: UserUpsertWithoutBlacklistTokenInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutBlacklistTokenInput, UserUpdateWithoutBlacklistTokenInput>, UserUncheckedUpdateWithoutBlacklistTokenInput>
   }
 
   export type AccountCreateNestedManyWithoutUserInput = {
@@ -14947,6 +15036,13 @@ export namespace Prisma {
     connect?: TeamMemberWhereUniqueInput | TeamMemberWhereUniqueInput[]
   }
 
+  export type BlacklistTokenCreateNestedManyWithoutUserInput = {
+    create?: XOR<BlacklistTokenCreateWithoutUserInput, BlacklistTokenUncheckedCreateWithoutUserInput> | BlacklistTokenCreateWithoutUserInput[] | BlacklistTokenUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: BlacklistTokenCreateOrConnectWithoutUserInput | BlacklistTokenCreateOrConnectWithoutUserInput[]
+    createMany?: BlacklistTokenCreateManyUserInputEnvelope
+    connect?: BlacklistTokenWhereUniqueInput | BlacklistTokenWhereUniqueInput[]
+  }
+
   export type AccountUncheckedCreateNestedManyWithoutUserInput = {
     create?: XOR<AccountCreateWithoutUserInput, AccountUncheckedCreateWithoutUserInput> | AccountCreateWithoutUserInput[] | AccountUncheckedCreateWithoutUserInput[]
     connectOrCreate?: AccountCreateOrConnectWithoutUserInput | AccountCreateOrConnectWithoutUserInput[]
@@ -14987,6 +15083,13 @@ export namespace Prisma {
     connectOrCreate?: TeamMemberCreateOrConnectWithoutUserInput | TeamMemberCreateOrConnectWithoutUserInput[]
     createMany?: TeamMemberCreateManyUserInputEnvelope
     connect?: TeamMemberWhereUniqueInput | TeamMemberWhereUniqueInput[]
+  }
+
+  export type BlacklistTokenUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<BlacklistTokenCreateWithoutUserInput, BlacklistTokenUncheckedCreateWithoutUserInput> | BlacklistTokenCreateWithoutUserInput[] | BlacklistTokenUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: BlacklistTokenCreateOrConnectWithoutUserInput | BlacklistTokenCreateOrConnectWithoutUserInput[]
+    createMany?: BlacklistTokenCreateManyUserInputEnvelope
+    connect?: BlacklistTokenWhereUniqueInput | BlacklistTokenWhereUniqueInput[]
   }
 
   export type NullableStringFieldUpdateOperationsInput = {
@@ -15089,6 +15192,20 @@ export namespace Prisma {
     deleteMany?: TeamMemberScalarWhereInput | TeamMemberScalarWhereInput[]
   }
 
+  export type BlacklistTokenUpdateManyWithoutUserNestedInput = {
+    create?: XOR<BlacklistTokenCreateWithoutUserInput, BlacklistTokenUncheckedCreateWithoutUserInput> | BlacklistTokenCreateWithoutUserInput[] | BlacklistTokenUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: BlacklistTokenCreateOrConnectWithoutUserInput | BlacklistTokenCreateOrConnectWithoutUserInput[]
+    upsert?: BlacklistTokenUpsertWithWhereUniqueWithoutUserInput | BlacklistTokenUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: BlacklistTokenCreateManyUserInputEnvelope
+    set?: BlacklistTokenWhereUniqueInput | BlacklistTokenWhereUniqueInput[]
+    disconnect?: BlacklistTokenWhereUniqueInput | BlacklistTokenWhereUniqueInput[]
+    delete?: BlacklistTokenWhereUniqueInput | BlacklistTokenWhereUniqueInput[]
+    connect?: BlacklistTokenWhereUniqueInput | BlacklistTokenWhereUniqueInput[]
+    update?: BlacklistTokenUpdateWithWhereUniqueWithoutUserInput | BlacklistTokenUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: BlacklistTokenUpdateManyWithWhereWithoutUserInput | BlacklistTokenUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: BlacklistTokenScalarWhereInput | BlacklistTokenScalarWhereInput[]
+  }
+
   export type AccountUncheckedUpdateManyWithoutUserNestedInput = {
     create?: XOR<AccountCreateWithoutUserInput, AccountUncheckedCreateWithoutUserInput> | AccountCreateWithoutUserInput[] | AccountUncheckedCreateWithoutUserInput[]
     connectOrCreate?: AccountCreateOrConnectWithoutUserInput | AccountCreateOrConnectWithoutUserInput[]
@@ -15173,6 +15290,20 @@ export namespace Prisma {
     deleteMany?: TeamMemberScalarWhereInput | TeamMemberScalarWhereInput[]
   }
 
+  export type BlacklistTokenUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<BlacklistTokenCreateWithoutUserInput, BlacklistTokenUncheckedCreateWithoutUserInput> | BlacklistTokenCreateWithoutUserInput[] | BlacklistTokenUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: BlacklistTokenCreateOrConnectWithoutUserInput | BlacklistTokenCreateOrConnectWithoutUserInput[]
+    upsert?: BlacklistTokenUpsertWithWhereUniqueWithoutUserInput | BlacklistTokenUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: BlacklistTokenCreateManyUserInputEnvelope
+    set?: BlacklistTokenWhereUniqueInput | BlacklistTokenWhereUniqueInput[]
+    disconnect?: BlacklistTokenWhereUniqueInput | BlacklistTokenWhereUniqueInput[]
+    delete?: BlacklistTokenWhereUniqueInput | BlacklistTokenWhereUniqueInput[]
+    connect?: BlacklistTokenWhereUniqueInput | BlacklistTokenWhereUniqueInput[]
+    update?: BlacklistTokenUpdateWithWhereUniqueWithoutUserInput | BlacklistTokenUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: BlacklistTokenUpdateManyWithWhereWithoutUserInput | BlacklistTokenUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: BlacklistTokenScalarWhereInput | BlacklistTokenScalarWhereInput[]
+  }
+
   export type UserCreateNestedOneWithoutOrdersInput = {
     create?: XOR<UserCreateWithoutOrdersInput, UserUncheckedCreateWithoutOrdersInput>
     connectOrCreate?: UserCreateOrConnectWithoutOrdersInput
@@ -15209,14 +15340,6 @@ export namespace Prisma {
     create?: XOR<UserCreateWithoutAccountsInput, UserUncheckedCreateWithoutAccountsInput>
     connectOrCreate?: UserCreateOrConnectWithoutAccountsInput
     connect?: UserWhereUniqueInput
-  }
-
-  export type NullableIntFieldUpdateOperationsInput = {
-    set?: number | null
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
   }
 
   export type UserUpdateOneRequiredWithoutAccountsNestedInput = {
@@ -15285,6 +15408,14 @@ export namespace Prisma {
 
   export type EnumProjectStatusFieldUpdateOperationsInput = {
     set?: $Enums.ProjectStatus
+  }
+
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type UserUpdateOneRequiredWithoutProjectsNestedInput = {
@@ -15712,22 +15843,6 @@ export namespace Prisma {
     _max?: NestedEnumOrderStatusFilter<$PrismaModel>
   }
 
-  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
-  }
-
   export type NestedFloatNullableFilter<$PrismaModel = never> = {
     equals?: number | FloatFieldRefInput<$PrismaModel> | null
     in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
@@ -15770,6 +15885,22 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumProjectStatusFilter<$PrismaModel>
     _max?: NestedEnumProjectStatusFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
   }
   export type NestedJsonNullableFilter<$PrismaModel = never> =
     | PatchUndefined<
@@ -15890,14 +16021,118 @@ export namespace Prisma {
     _max?: NestedEnumInvoiceStatusFilter<$PrismaModel>
   }
 
+  export type UserCreateWithoutBlacklistTokenInput = {
+    id?: string
+    firstName?: string | null
+    lastName?: string | null
+    name?: string | null
+    email: string
+    password: string
+    phone?: string | null
+    avatar?: string | null
+    role?: $Enums.Role
+    isVerified?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastLogin?: Date | string | null
+    accounts?: AccountCreateNestedManyWithoutUserInput
+    sessions?: SessionCreateNestedManyWithoutUserInput
+    projects?: ProjectCreateNestedManyWithoutClientInput
+    orders?: OrderCreateNestedManyWithoutUserInput
+    invoices?: InvoiceCreateNestedManyWithoutClientInput
+    TeamMember?: TeamMemberCreateNestedManyWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutBlacklistTokenInput = {
+    id?: string
+    firstName?: string | null
+    lastName?: string | null
+    name?: string | null
+    email: string
+    password: string
+    phone?: string | null
+    avatar?: string | null
+    role?: $Enums.Role
+    isVerified?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastLogin?: Date | string | null
+    accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
+    sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
+    projects?: ProjectUncheckedCreateNestedManyWithoutClientInput
+    orders?: OrderUncheckedCreateNestedManyWithoutUserInput
+    invoices?: InvoiceUncheckedCreateNestedManyWithoutClientInput
+    TeamMember?: TeamMemberUncheckedCreateNestedManyWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutBlacklistTokenInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutBlacklistTokenInput, UserUncheckedCreateWithoutBlacklistTokenInput>
+  }
+
+  export type UserUpsertWithoutBlacklistTokenInput = {
+    update: XOR<UserUpdateWithoutBlacklistTokenInput, UserUncheckedUpdateWithoutBlacklistTokenInput>
+    create: XOR<UserCreateWithoutBlacklistTokenInput, UserUncheckedCreateWithoutBlacklistTokenInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutBlacklistTokenInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutBlacklistTokenInput, UserUncheckedUpdateWithoutBlacklistTokenInput>
+  }
+
+  export type UserUpdateWithoutBlacklistTokenInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    firstName?: NullableStringFieldUpdateOperationsInput | string | null
+    lastName?: NullableStringFieldUpdateOperationsInput | string | null
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    avatar?: NullableStringFieldUpdateOperationsInput | string | null
+    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    accounts?: AccountUpdateManyWithoutUserNestedInput
+    sessions?: SessionUpdateManyWithoutUserNestedInput
+    projects?: ProjectUpdateManyWithoutClientNestedInput
+    orders?: OrderUpdateManyWithoutUserNestedInput
+    invoices?: InvoiceUpdateManyWithoutClientNestedInput
+    TeamMember?: TeamMemberUpdateManyWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutBlacklistTokenInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    firstName?: NullableStringFieldUpdateOperationsInput | string | null
+    lastName?: NullableStringFieldUpdateOperationsInput | string | null
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    avatar?: NullableStringFieldUpdateOperationsInput | string | null
+    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
+    sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
+    projects?: ProjectUncheckedUpdateManyWithoutClientNestedInput
+    orders?: OrderUncheckedUpdateManyWithoutUserNestedInput
+    invoices?: InvoiceUncheckedUpdateManyWithoutClientNestedInput
+    TeamMember?: TeamMemberUncheckedUpdateManyWithoutUserNestedInput
+  }
+
   export type AccountCreateWithoutUserInput = {
     id?: string
-    type: string
-    provider: string
-    providerAccountId: string
-    refresh_token?: string | null
+    type?: string | null
     access_token?: string | null
-    expires_at?: number | null
+    expires_at: Date | string
+    provider?: string | null
+    providerAccountId?: string | null
+    refresh_token?: string | null
     token_type?: string | null
     scope?: string | null
     id_token?: string | null
@@ -15906,12 +16141,12 @@ export namespace Prisma {
 
   export type AccountUncheckedCreateWithoutUserInput = {
     id?: string
-    type: string
-    provider: string
-    providerAccountId: string
-    refresh_token?: string | null
+    type?: string | null
     access_token?: string | null
-    expires_at?: number | null
+    expires_at: Date | string
+    provider?: string | null
+    providerAccountId?: string | null
+    refresh_token?: string | null
     token_type?: string | null
     scope?: string | null
     id_token?: string | null
@@ -16082,6 +16317,28 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type BlacklistTokenCreateWithoutUserInput = {
+    id?: string
+    access_token: string
+    expires_at: Date | string
+  }
+
+  export type BlacklistTokenUncheckedCreateWithoutUserInput = {
+    id?: string
+    access_token: string
+    expires_at: Date | string
+  }
+
+  export type BlacklistTokenCreateOrConnectWithoutUserInput = {
+    where: BlacklistTokenWhereUniqueInput
+    create: XOR<BlacklistTokenCreateWithoutUserInput, BlacklistTokenUncheckedCreateWithoutUserInput>
+  }
+
+  export type BlacklistTokenCreateManyUserInputEnvelope = {
+    data: BlacklistTokenCreateManyUserInput | BlacklistTokenCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
   export type AccountUpsertWithWhereUniqueWithoutUserInput = {
     where: AccountWhereUniqueInput
     update: XOR<AccountUpdateWithoutUserInput, AccountUncheckedUpdateWithoutUserInput>
@@ -16104,12 +16361,12 @@ export namespace Prisma {
     NOT?: AccountScalarWhereInput | AccountScalarWhereInput[]
     id?: StringFilter<"Account"> | string
     userId?: StringFilter<"Account"> | string
-    type?: StringFilter<"Account"> | string
-    provider?: StringFilter<"Account"> | string
-    providerAccountId?: StringFilter<"Account"> | string
-    refresh_token?: StringNullableFilter<"Account"> | string | null
+    type?: StringNullableFilter<"Account"> | string | null
     access_token?: StringNullableFilter<"Account"> | string | null
-    expires_at?: IntNullableFilter<"Account"> | number | null
+    expires_at?: DateTimeFilter<"Account"> | Date | string
+    provider?: StringNullableFilter<"Account"> | string | null
+    providerAccountId?: StringNullableFilter<"Account"> | string | null
+    refresh_token?: StringNullableFilter<"Account"> | string | null
     token_type?: StringNullableFilter<"Account"> | string | null
     scope?: StringNullableFilter<"Account"> | string | null
     id_token?: StringNullableFilter<"Account"> | string | null
@@ -16264,6 +16521,32 @@ export namespace Prisma {
     role?: StringFilter<"TeamMember"> | string
   }
 
+  export type BlacklistTokenUpsertWithWhereUniqueWithoutUserInput = {
+    where: BlacklistTokenWhereUniqueInput
+    update: XOR<BlacklistTokenUpdateWithoutUserInput, BlacklistTokenUncheckedUpdateWithoutUserInput>
+    create: XOR<BlacklistTokenCreateWithoutUserInput, BlacklistTokenUncheckedCreateWithoutUserInput>
+  }
+
+  export type BlacklistTokenUpdateWithWhereUniqueWithoutUserInput = {
+    where: BlacklistTokenWhereUniqueInput
+    data: XOR<BlacklistTokenUpdateWithoutUserInput, BlacklistTokenUncheckedUpdateWithoutUserInput>
+  }
+
+  export type BlacklistTokenUpdateManyWithWhereWithoutUserInput = {
+    where: BlacklistTokenScalarWhereInput
+    data: XOR<BlacklistTokenUpdateManyMutationInput, BlacklistTokenUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type BlacklistTokenScalarWhereInput = {
+    AND?: BlacklistTokenScalarWhereInput | BlacklistTokenScalarWhereInput[]
+    OR?: BlacklistTokenScalarWhereInput[]
+    NOT?: BlacklistTokenScalarWhereInput | BlacklistTokenScalarWhereInput[]
+    id?: StringFilter<"BlacklistToken"> | string
+    userId?: StringFilter<"BlacklistToken"> | string
+    access_token?: StringFilter<"BlacklistToken"> | string
+    expires_at?: DateTimeFilter<"BlacklistToken"> | Date | string
+  }
+
   export type UserCreateWithoutOrdersInput = {
     id?: string
     firstName?: string | null
@@ -16283,6 +16566,7 @@ export namespace Prisma {
     projects?: ProjectCreateNestedManyWithoutClientInput
     invoices?: InvoiceCreateNestedManyWithoutClientInput
     TeamMember?: TeamMemberCreateNestedManyWithoutUserInput
+    BlacklistToken?: BlacklistTokenCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutOrdersInput = {
@@ -16304,6 +16588,7 @@ export namespace Prisma {
     projects?: ProjectUncheckedCreateNestedManyWithoutClientInput
     invoices?: InvoiceUncheckedCreateNestedManyWithoutClientInput
     TeamMember?: TeamMemberUncheckedCreateNestedManyWithoutUserInput
+    BlacklistToken?: BlacklistTokenUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutOrdersInput = {
@@ -16341,6 +16626,7 @@ export namespace Prisma {
     projects?: ProjectUpdateManyWithoutClientNestedInput
     invoices?: InvoiceUpdateManyWithoutClientNestedInput
     TeamMember?: TeamMemberUpdateManyWithoutUserNestedInput
+    BlacklistToken?: BlacklistTokenUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutOrdersInput = {
@@ -16362,6 +16648,7 @@ export namespace Prisma {
     projects?: ProjectUncheckedUpdateManyWithoutClientNestedInput
     invoices?: InvoiceUncheckedUpdateManyWithoutClientNestedInput
     TeamMember?: TeamMemberUncheckedUpdateManyWithoutUserNestedInput
+    BlacklistToken?: BlacklistTokenUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateWithoutSessionsInput = {
@@ -16383,6 +16670,7 @@ export namespace Prisma {
     orders?: OrderCreateNestedManyWithoutUserInput
     invoices?: InvoiceCreateNestedManyWithoutClientInput
     TeamMember?: TeamMemberCreateNestedManyWithoutUserInput
+    BlacklistToken?: BlacklistTokenCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutSessionsInput = {
@@ -16404,6 +16692,7 @@ export namespace Prisma {
     orders?: OrderUncheckedCreateNestedManyWithoutUserInput
     invoices?: InvoiceUncheckedCreateNestedManyWithoutClientInput
     TeamMember?: TeamMemberUncheckedCreateNestedManyWithoutUserInput
+    BlacklistToken?: BlacklistTokenUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutSessionsInput = {
@@ -16441,6 +16730,7 @@ export namespace Prisma {
     orders?: OrderUpdateManyWithoutUserNestedInput
     invoices?: InvoiceUpdateManyWithoutClientNestedInput
     TeamMember?: TeamMemberUpdateManyWithoutUserNestedInput
+    BlacklistToken?: BlacklistTokenUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutSessionsInput = {
@@ -16462,6 +16752,7 @@ export namespace Prisma {
     orders?: OrderUncheckedUpdateManyWithoutUserNestedInput
     invoices?: InvoiceUncheckedUpdateManyWithoutClientNestedInput
     TeamMember?: TeamMemberUncheckedUpdateManyWithoutUserNestedInput
+    BlacklistToken?: BlacklistTokenUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateWithoutAccountsInput = {
@@ -16483,6 +16774,7 @@ export namespace Prisma {
     orders?: OrderCreateNestedManyWithoutUserInput
     invoices?: InvoiceCreateNestedManyWithoutClientInput
     TeamMember?: TeamMemberCreateNestedManyWithoutUserInput
+    BlacklistToken?: BlacklistTokenCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutAccountsInput = {
@@ -16504,6 +16796,7 @@ export namespace Prisma {
     orders?: OrderUncheckedCreateNestedManyWithoutUserInput
     invoices?: InvoiceUncheckedCreateNestedManyWithoutClientInput
     TeamMember?: TeamMemberUncheckedCreateNestedManyWithoutUserInput
+    BlacklistToken?: BlacklistTokenUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutAccountsInput = {
@@ -16541,6 +16834,7 @@ export namespace Prisma {
     orders?: OrderUpdateManyWithoutUserNestedInput
     invoices?: InvoiceUpdateManyWithoutClientNestedInput
     TeamMember?: TeamMemberUpdateManyWithoutUserNestedInput
+    BlacklistToken?: BlacklistTokenUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutAccountsInput = {
@@ -16562,6 +16856,7 @@ export namespace Prisma {
     orders?: OrderUncheckedUpdateManyWithoutUserNestedInput
     invoices?: InvoiceUncheckedUpdateManyWithoutClientNestedInput
     TeamMember?: TeamMemberUncheckedUpdateManyWithoutUserNestedInput
+    BlacklistToken?: BlacklistTokenUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateWithoutProjectsInput = {
@@ -16583,6 +16878,7 @@ export namespace Prisma {
     orders?: OrderCreateNestedManyWithoutUserInput
     invoices?: InvoiceCreateNestedManyWithoutClientInput
     TeamMember?: TeamMemberCreateNestedManyWithoutUserInput
+    BlacklistToken?: BlacklistTokenCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutProjectsInput = {
@@ -16604,6 +16900,7 @@ export namespace Prisma {
     orders?: OrderUncheckedCreateNestedManyWithoutUserInput
     invoices?: InvoiceUncheckedCreateNestedManyWithoutClientInput
     TeamMember?: TeamMemberUncheckedCreateNestedManyWithoutUserInput
+    BlacklistToken?: BlacklistTokenUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutProjectsInput = {
@@ -16743,6 +17040,7 @@ export namespace Prisma {
     orders?: OrderUpdateManyWithoutUserNestedInput
     invoices?: InvoiceUpdateManyWithoutClientNestedInput
     TeamMember?: TeamMemberUpdateManyWithoutUserNestedInput
+    BlacklistToken?: BlacklistTokenUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutProjectsInput = {
@@ -16764,6 +17062,7 @@ export namespace Prisma {
     orders?: OrderUncheckedUpdateManyWithoutUserNestedInput
     invoices?: InvoiceUncheckedUpdateManyWithoutClientNestedInput
     TeamMember?: TeamMemberUncheckedUpdateManyWithoutUserNestedInput
+    BlacklistToken?: BlacklistTokenUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type TransactionUpsertWithWhereUniqueWithoutProjectInput = {
@@ -17054,6 +17353,7 @@ export namespace Prisma {
     projects?: ProjectCreateNestedManyWithoutClientInput
     orders?: OrderCreateNestedManyWithoutUserInput
     TeamMember?: TeamMemberCreateNestedManyWithoutUserInput
+    BlacklistToken?: BlacklistTokenCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutInvoicesInput = {
@@ -17075,6 +17375,7 @@ export namespace Prisma {
     projects?: ProjectUncheckedCreateNestedManyWithoutClientInput
     orders?: OrderUncheckedCreateNestedManyWithoutUserInput
     TeamMember?: TeamMemberUncheckedCreateNestedManyWithoutUserInput
+    BlacklistToken?: BlacklistTokenUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutInvoicesInput = {
@@ -17195,6 +17496,7 @@ export namespace Prisma {
     projects?: ProjectUpdateManyWithoutClientNestedInput
     orders?: OrderUpdateManyWithoutUserNestedInput
     TeamMember?: TeamMemberUpdateManyWithoutUserNestedInput
+    BlacklistToken?: BlacklistTokenUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutInvoicesInput = {
@@ -17216,6 +17518,7 @@ export namespace Prisma {
     projects?: ProjectUncheckedUpdateManyWithoutClientNestedInput
     orders?: OrderUncheckedUpdateManyWithoutUserNestedInput
     TeamMember?: TeamMemberUncheckedUpdateManyWithoutUserNestedInput
+    BlacklistToken?: BlacklistTokenUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type TransactionUpsertWithWhereUniqueWithoutInvoiceInput = {
@@ -17292,6 +17595,7 @@ export namespace Prisma {
     projects?: ProjectCreateNestedManyWithoutClientInput
     orders?: OrderCreateNestedManyWithoutUserInput
     invoices?: InvoiceCreateNestedManyWithoutClientInput
+    BlacklistToken?: BlacklistTokenCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutTeamMemberInput = {
@@ -17313,6 +17617,7 @@ export namespace Prisma {
     projects?: ProjectUncheckedCreateNestedManyWithoutClientInput
     orders?: OrderUncheckedCreateNestedManyWithoutUserInput
     invoices?: InvoiceUncheckedCreateNestedManyWithoutClientInput
+    BlacklistToken?: BlacklistTokenUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutTeamMemberInput = {
@@ -17395,6 +17700,7 @@ export namespace Prisma {
     projects?: ProjectUpdateManyWithoutClientNestedInput
     orders?: OrderUpdateManyWithoutUserNestedInput
     invoices?: InvoiceUpdateManyWithoutClientNestedInput
+    BlacklistToken?: BlacklistTokenUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutTeamMemberInput = {
@@ -17416,16 +17722,17 @@ export namespace Prisma {
     projects?: ProjectUncheckedUpdateManyWithoutClientNestedInput
     orders?: OrderUncheckedUpdateManyWithoutUserNestedInput
     invoices?: InvoiceUncheckedUpdateManyWithoutClientNestedInput
+    BlacklistToken?: BlacklistTokenUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type AccountCreateManyUserInput = {
     id?: string
-    type: string
-    provider: string
-    providerAccountId: string
-    refresh_token?: string | null
+    type?: string | null
     access_token?: string | null
-    expires_at?: number | null
+    expires_at: Date | string
+    provider?: string | null
+    providerAccountId?: string | null
+    refresh_token?: string | null
     token_type?: string | null
     scope?: string | null
     id_token?: string | null
@@ -17480,14 +17787,20 @@ export namespace Prisma {
     role?: string
   }
 
+  export type BlacklistTokenCreateManyUserInput = {
+    id?: string
+    access_token: string
+    expires_at: Date | string
+  }
+
   export type AccountUpdateWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    provider?: StringFieldUpdateOperationsInput | string
-    providerAccountId?: StringFieldUpdateOperationsInput | string
-    refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: NullableStringFieldUpdateOperationsInput | string | null
     access_token?: NullableStringFieldUpdateOperationsInput | string | null
-    expires_at?: NullableIntFieldUpdateOperationsInput | number | null
+    expires_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    provider?: NullableStringFieldUpdateOperationsInput | string | null
+    providerAccountId?: NullableStringFieldUpdateOperationsInput | string | null
+    refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
     token_type?: NullableStringFieldUpdateOperationsInput | string | null
     scope?: NullableStringFieldUpdateOperationsInput | string | null
     id_token?: NullableStringFieldUpdateOperationsInput | string | null
@@ -17496,12 +17809,12 @@ export namespace Prisma {
 
   export type AccountUncheckedUpdateWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    provider?: StringFieldUpdateOperationsInput | string
-    providerAccountId?: StringFieldUpdateOperationsInput | string
-    refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: NullableStringFieldUpdateOperationsInput | string | null
     access_token?: NullableStringFieldUpdateOperationsInput | string | null
-    expires_at?: NullableIntFieldUpdateOperationsInput | number | null
+    expires_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    provider?: NullableStringFieldUpdateOperationsInput | string | null
+    providerAccountId?: NullableStringFieldUpdateOperationsInput | string | null
+    refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
     token_type?: NullableStringFieldUpdateOperationsInput | string | null
     scope?: NullableStringFieldUpdateOperationsInput | string | null
     id_token?: NullableStringFieldUpdateOperationsInput | string | null
@@ -17510,12 +17823,12 @@ export namespace Prisma {
 
   export type AccountUncheckedUpdateManyWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    provider?: StringFieldUpdateOperationsInput | string
-    providerAccountId?: StringFieldUpdateOperationsInput | string
-    refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: NullableStringFieldUpdateOperationsInput | string | null
     access_token?: NullableStringFieldUpdateOperationsInput | string | null
-    expires_at?: NullableIntFieldUpdateOperationsInput | number | null
+    expires_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    provider?: NullableStringFieldUpdateOperationsInput | string | null
+    providerAccountId?: NullableStringFieldUpdateOperationsInput | string | null
+    refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
     token_type?: NullableStringFieldUpdateOperationsInput | string | null
     scope?: NullableStringFieldUpdateOperationsInput | string | null
     id_token?: NullableStringFieldUpdateOperationsInput | string | null
@@ -17672,6 +17985,24 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     projectId?: StringFieldUpdateOperationsInput | string
     role?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type BlacklistTokenUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    access_token?: StringFieldUpdateOperationsInput | string
+    expires_at?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BlacklistTokenUncheckedUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    access_token?: StringFieldUpdateOperationsInput | string
+    expires_at?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BlacklistTokenUncheckedUpdateManyWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    access_token?: StringFieldUpdateOperationsInput | string
+    expires_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TransactionCreateManyProjectInput = {

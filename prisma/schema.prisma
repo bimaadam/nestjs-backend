@@ -14,11 +14,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model BlacklistedToken {
-  id        String   @id @default(uuid())
-  token     String   @unique
-  expiresAt DateTime
-  createdAt DateTime @default(now())
+model BlacklistToken {
+  id String @id @default(cuid())
+  userId String 
+  access_token String
+  expires_at DateTime
+
+  user User @relation(fields: [userId], references: [id])
 }
 
 model User {
@@ -48,6 +50,7 @@ model User {
   @@index([role])
   @@map("users")
   TeamMember TeamMember[]
+  BlacklistToken BlacklistToken[]
 }
 
 model Order {
@@ -72,16 +75,19 @@ model Session {
   expires      DateTime
 
   user User @relation(fields: [userId], references: [id])
+
+  @@index([sessionToken])
+  @@index([userId])
 }
 model Account {
   id                String  @id @default(cuid())
   userId            String
-  type              String
-  provider          String
-  providerAccountId String
-  refresh_token     String?
+  type              String?
   access_token      String?
-  expires_at        Int?
+  expires_at        DateTime
+  provider          String?
+  providerAccountId String?
+  refresh_token     String?
   token_type        String?
   scope             String?
   id_token          String?
