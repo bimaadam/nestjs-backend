@@ -55,9 +55,16 @@ async isTokenBlacklisted(token: string): Promise<boolean> {
     },
   });
 
-  return {
-    access_token: accessToken,
-    session_token: sessionToken, // tambahin ini buat client simpen
+    await this.prisma.account.create({
+      data: {
+        userId: user.id,
+        expires_at: expires,
+        access_token: accessToken,
+
+      }
+    })
+
+  return {// tambahin ini buat client simpen
     user: {
       id: user.id,
       email: user.email,
