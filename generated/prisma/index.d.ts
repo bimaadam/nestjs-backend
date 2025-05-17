@@ -5327,6 +5327,7 @@ export namespace Prisma {
     sessionToken: string | null
     userId: string | null
     expires: Date | null
+    revoked: boolean | null
   }
 
   export type SessionMaxAggregateOutputType = {
@@ -5334,6 +5335,7 @@ export namespace Prisma {
     sessionToken: string | null
     userId: string | null
     expires: Date | null
+    revoked: boolean | null
   }
 
   export type SessionCountAggregateOutputType = {
@@ -5341,6 +5343,7 @@ export namespace Prisma {
     sessionToken: number
     userId: number
     expires: number
+    revoked: number
     _all: number
   }
 
@@ -5350,6 +5353,7 @@ export namespace Prisma {
     sessionToken?: true
     userId?: true
     expires?: true
+    revoked?: true
   }
 
   export type SessionMaxAggregateInputType = {
@@ -5357,6 +5361,7 @@ export namespace Prisma {
     sessionToken?: true
     userId?: true
     expires?: true
+    revoked?: true
   }
 
   export type SessionCountAggregateInputType = {
@@ -5364,6 +5369,7 @@ export namespace Prisma {
     sessionToken?: true
     userId?: true
     expires?: true
+    revoked?: true
     _all?: true
   }
 
@@ -5444,6 +5450,7 @@ export namespace Prisma {
     sessionToken: string
     userId: string
     expires: Date
+    revoked: boolean
     _count: SessionCountAggregateOutputType | null
     _min: SessionMinAggregateOutputType | null
     _max: SessionMaxAggregateOutputType | null
@@ -5468,6 +5475,7 @@ export namespace Prisma {
     sessionToken?: boolean
     userId?: boolean
     expires?: boolean
+    revoked?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["session"]>
 
@@ -5476,6 +5484,7 @@ export namespace Prisma {
     sessionToken?: boolean
     userId?: boolean
     expires?: boolean
+    revoked?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["session"]>
 
@@ -5484,6 +5493,7 @@ export namespace Prisma {
     sessionToken?: boolean
     userId?: boolean
     expires?: boolean
+    revoked?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["session"]>
 
@@ -5492,9 +5502,10 @@ export namespace Prisma {
     sessionToken?: boolean
     userId?: boolean
     expires?: boolean
+    revoked?: boolean
   }
 
-  export type SessionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "sessionToken" | "userId" | "expires", ExtArgs["result"]["session"]>
+  export type SessionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "sessionToken" | "userId" | "expires" | "revoked", ExtArgs["result"]["session"]>
   export type SessionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -5515,6 +5526,7 @@ export namespace Prisma {
       sessionToken: string
       userId: string
       expires: Date
+      revoked: boolean
     }, ExtArgs["result"]["session"]>
     composites: {}
   }
@@ -5943,6 +5955,7 @@ export namespace Prisma {
     readonly sessionToken: FieldRef<"Session", 'String'>
     readonly userId: FieldRef<"Session", 'String'>
     readonly expires: FieldRef<"Session", 'DateTime'>
+    readonly revoked: FieldRef<"Session", 'Boolean'>
   }
     
 
@@ -12338,7 +12351,8 @@ export namespace Prisma {
     id: 'id',
     sessionToken: 'sessionToken',
     userId: 'userId',
-    expires: 'expires'
+    expires: 'expires',
+    revoked: 'revoked'
   };
 
   export type SessionScalarFieldEnum = (typeof SessionScalarFieldEnum)[keyof typeof SessionScalarFieldEnum]
@@ -12877,6 +12891,7 @@ export namespace Prisma {
     sessionToken?: StringFilter<"Session"> | string
     userId?: StringFilter<"Session"> | string
     expires?: DateTimeFilter<"Session"> | Date | string
+    revoked?: BoolFilter<"Session"> | boolean
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
@@ -12885,6 +12900,7 @@ export namespace Prisma {
     sessionToken?: SortOrder
     userId?: SortOrder
     expires?: SortOrder
+    revoked?: SortOrder
     user?: UserOrderByWithRelationInput
   }
 
@@ -12896,6 +12912,7 @@ export namespace Prisma {
     NOT?: SessionWhereInput | SessionWhereInput[]
     userId?: StringFilter<"Session"> | string
     expires?: DateTimeFilter<"Session"> | Date | string
+    revoked?: BoolFilter<"Session"> | boolean
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id" | "sessionToken">
 
@@ -12904,6 +12921,7 @@ export namespace Prisma {
     sessionToken?: SortOrder
     userId?: SortOrder
     expires?: SortOrder
+    revoked?: SortOrder
     _count?: SessionCountOrderByAggregateInput
     _max?: SessionMaxOrderByAggregateInput
     _min?: SessionMinOrderByAggregateInput
@@ -12917,6 +12935,7 @@ export namespace Prisma {
     sessionToken?: StringWithAggregatesFilter<"Session"> | string
     userId?: StringWithAggregatesFilter<"Session"> | string
     expires?: DateTimeWithAggregatesFilter<"Session"> | Date | string
+    revoked?: BoolWithAggregatesFilter<"Session"> | boolean
   }
 
   export type AccountWhereInput = {
@@ -13610,6 +13629,7 @@ export namespace Prisma {
     id?: string
     sessionToken: string
     expires: Date | string
+    revoked?: boolean
     user: UserCreateNestedOneWithoutSessionsInput
   }
 
@@ -13618,12 +13638,14 @@ export namespace Prisma {
     sessionToken: string
     userId: string
     expires: Date | string
+    revoked?: boolean
   }
 
   export type SessionUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     sessionToken?: StringFieldUpdateOperationsInput | string
     expires?: DateTimeFieldUpdateOperationsInput | Date | string
+    revoked?: BoolFieldUpdateOperationsInput | boolean
     user?: UserUpdateOneRequiredWithoutSessionsNestedInput
   }
 
@@ -13632,6 +13654,7 @@ export namespace Prisma {
     sessionToken?: StringFieldUpdateOperationsInput | string
     userId?: StringFieldUpdateOperationsInput | string
     expires?: DateTimeFieldUpdateOperationsInput | Date | string
+    revoked?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type SessionCreateManyInput = {
@@ -13639,12 +13662,14 @@ export namespace Prisma {
     sessionToken: string
     userId: string
     expires: Date | string
+    revoked?: boolean
   }
 
   export type SessionUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     sessionToken?: StringFieldUpdateOperationsInput | string
     expires?: DateTimeFieldUpdateOperationsInput | Date | string
+    revoked?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type SessionUncheckedUpdateManyInput = {
@@ -13652,6 +13677,7 @@ export namespace Prisma {
     sessionToken?: StringFieldUpdateOperationsInput | string
     userId?: StringFieldUpdateOperationsInput | string
     expires?: DateTimeFieldUpdateOperationsInput | Date | string
+    revoked?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type AccountCreateInput = {
@@ -14479,6 +14505,7 @@ export namespace Prisma {
     sessionToken?: SortOrder
     userId?: SortOrder
     expires?: SortOrder
+    revoked?: SortOrder
   }
 
   export type SessionMaxOrderByAggregateInput = {
@@ -14486,6 +14513,7 @@ export namespace Prisma {
     sessionToken?: SortOrder
     userId?: SortOrder
     expires?: SortOrder
+    revoked?: SortOrder
   }
 
   export type SessionMinOrderByAggregateInput = {
@@ -14493,6 +14521,7 @@ export namespace Prisma {
     sessionToken?: SortOrder
     userId?: SortOrder
     expires?: SortOrder
+    revoked?: SortOrder
   }
 
   export type AccountProviderProviderAccountIdCompoundUniqueInput = {
@@ -16167,12 +16196,14 @@ export namespace Prisma {
     id?: string
     sessionToken: string
     expires: Date | string
+    revoked?: boolean
   }
 
   export type SessionUncheckedCreateWithoutUserInput = {
     id?: string
     sessionToken: string
     expires: Date | string
+    revoked?: boolean
   }
 
   export type SessionCreateOrConnectWithoutUserInput = {
@@ -16397,6 +16428,7 @@ export namespace Prisma {
     sessionToken?: StringFilter<"Session"> | string
     userId?: StringFilter<"Session"> | string
     expires?: DateTimeFilter<"Session"> | Date | string
+    revoked?: BoolFilter<"Session"> | boolean
   }
 
   export type ProjectUpsertWithWhereUniqueWithoutClientInput = {
@@ -17743,6 +17775,7 @@ export namespace Prisma {
     id?: string
     sessionToken: string
     expires: Date | string
+    revoked?: boolean
   }
 
   export type ProjectCreateManyClientInput = {
@@ -17839,18 +17872,21 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     sessionToken?: StringFieldUpdateOperationsInput | string
     expires?: DateTimeFieldUpdateOperationsInput | Date | string
+    revoked?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type SessionUncheckedUpdateWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
     sessionToken?: StringFieldUpdateOperationsInput | string
     expires?: DateTimeFieldUpdateOperationsInput | Date | string
+    revoked?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type SessionUncheckedUpdateManyWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
     sessionToken?: StringFieldUpdateOperationsInput | string
     expires?: DateTimeFieldUpdateOperationsInput | Date | string
+    revoked?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type ProjectUpdateWithoutClientInput = {

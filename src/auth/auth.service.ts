@@ -85,33 +85,35 @@ async isTokenBlacklisted(token: string): Promise<boolean> {
       },
     });
   }
+  
+async logout(accessToken: string, sessionToken: string) {
+  const decoded = this.jwtService.verify(accessToken);
+  const user = decoded;
 
-  async logout(token: string) {
-  try {
-    const decoded = this.jwtService.verify(token);
-    const user = decoded;
+  // Cek blacklist
+  const isBlacklisted = await this.isTokenBlacklisted(accessToken);
+  if (isBlacklisted) return { message: 'Token sudah di-blacklist' };
 
-    // Cek jika token sudah di-blacklist
-    const isBlacklisted = await this.isTokenBlacklisted(token);
-    if (isBlacklisted) {
-      return { message: 'Token sudah di-blacklist' };
-    }
+  // Masukin token ke blacklist
+  await this.prisma.blacklistToken.create({
+    data: {
+      userId: user.sub,
+      access_token: accessToken,
+      expires_at: new Date(decoded.exp * 1000),
+    },
+  });
 
-    // Masukkan token ke blacklist
-    await this.prisma.blacklistToken.create({
-      data: {
-        userId: user.sub,
-        access_token: token,
-        expires_at: new Date(decoded.exp * 1000),
-      },
-    });
+  // Hapus session
+  await this.prisma.session.deleteMany({
+    where: {
+      userId: user.sub,
+      sessionToken,
+    },
+  });
 
-    return { message: 'Logout berhasil' };
-  } catch (error) {
-    console.log('Logout Error:', error.message);
-    return { message: 'Logout berhasil' }; 
-  }
+  return { message: 'Logout berhasil' };
 }
+
 
 
   async blacklistedtoken( id: string): Promise<boolean> {

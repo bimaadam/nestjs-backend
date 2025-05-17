@@ -7,6 +7,7 @@ import { JwtAuthGuard } from './jwt-auth-guard';
 
 @Controller('auth')
 export class AuthController {
+  prisma: any
   constructor(private readonly authService: AuthService) {}
 
   @Post('login')
@@ -33,26 +34,38 @@ export class AuthController {
   }
 
 @Post('logout')
-  async logout(@Req() req: Request) {
-    const authHeader = req.headers['authorization'];
-    if (!authHeader) {
-      throw new UnauthorizedException('Authorization header tidak ada');
-    }
+async logout(@Body() body: { sessionToken: string }, @Req() req: Request) {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader?.split(' ')[1];
+  if (!token) throw new UnauthorizedException('Token tidak ditemukan');
 
-    const token = authHeader.split(' ')[1];
-    if (!token) {
-      throw new UnauthorizedException('Token tidak ditemukan');
-    }
+  if (!body.sessionToken) throw new UnauthorizedException('Session token tidak ditemukan');
 
-    return this.authService.logout(token);
-  }
+  return this.authService.logout(token, body.sessionToken);
+}
   
   @UseGuards(AuthGuard('jwt'))
   @Get('profile')
-  getProfile(@Request() req) {
+  async getProfile(@Request() req) {
+    // Ambil sessionToken dari cookie, misal
+    const sessionToken = req.cookies?.session_token;
+    if (!sessionToken) {
+      throw new UnauthorizedException('Session token tidak ditemukan');
+    }
+
+    // Cek di DB session token masih valid dan belum expired
+    const session = await this.prisma.session.findUnique({
+      where: { sessionToken },
+    });
+
+    if (!session) {
+      throw new UnauthorizedException('Session token tidak valid');
+    }
+
+    // Kalau session valid, balikin profile user dari token JWT
     return {
       message: "You're logged in!",
-      user: req.user
+      user: req.user,
     };
   }
 }
