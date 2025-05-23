@@ -1,41 +1,49 @@
-import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from "@nestjs/common";
+import { Injectable, CanActivate, ExecutionContext, UnauthorizedException } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
-import { AuthService } from "./auth.service";
+import { PrismaService } from "src/prisma/prisma.service";
+import { Request } from "express";
 
 @Injectable()
-export class OptionalAuthGuard implements CanActivate {
+export class AuthGuard implements CanActivate {
   constructor(
     private jwtService: JwtService,
-    private authService: AuthService,
+    private prisma: PrismaService,
   ) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
-    const request = context.switchToHttp().getRequest();
-    const token = this.extractToken(request);
+    const req = context.switchToHttp().getRequest<Request>();
+    const token = req.cookies['token'];
 
     if (!token) {
-      // gak ada token, tapi gak masalah, lanjut aja
-      return true;
+      throw new UnauthorizedException('Token tidak ditemukan');
     }
 
-    // cek blacklist dan verifikasi token
     try {
-      const payload = this.jwtService.verify(token);
-      const isBlacklisted = await this.authService.isTokenBlacklisted(token);
-      if (isBlacklisted) throw new UnauthorizedException('Token sudah tidak valid');
+      const decoded = this.jwtService.verify(token);
 
-      // simpen user di request buat dipakai controller
-      request.user = payload;
+      // Cek token blacklist
+      const isBlacklisted = await this.prisma.blacklistToken.findFirst({
+        where: { access_token: token },
+      });
+      if (isBlacklisted) {
+        throw new UnauthorizedException('Token sudah tidak berlaku');
+      }
+
+      // Cek session valid di DB
+      const session = await this.prisma.session.findFirst({
+        where: {
+          userId: decoded.sub,
+          expires: { gt: new Date() },
+        },
+      });
+      if (!session) {
+        throw new UnauthorizedException('Session tidak valid');
+      }
+
+      req['user'] = decoded; // Simpan user di req buat controller
       return true;
-    } catch (e) {
-      throw new UnauthorizedException('Token gak valid');
+    } catch (err) {
+      throw new UnauthorizedException('Token tidak valid atau expired');
     }
-  }
-
-  private extractToken(request: any): string | null {
-    const authHeader = request.headers['authorization'];
-    if (!authHeader) return null;
-    const [type, token] = authHeader.split(' ');
-    return type === 'Bearer' ? token : null;
   }
 }
