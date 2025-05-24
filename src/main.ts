@@ -9,7 +9,7 @@ async function bootstrap() {
   app.use(cookieParser());
 
   app.enableCors({
-    origin: 'https://ajt-admin-dashboard.vercel.app',
+    origin: 'https://admin.abyzainjayateknika.my.id',
     credentials: true,
   });
 

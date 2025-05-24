@@ -1,48 +1,21 @@
-version: '3.8'
-
-services:
-  backend:
-    build: .
-    dns:
+backend:
+  build: .
+  dns:
     - 8.8.8.8
     - 1.1.1.1
     - 100.100.100.100
-    ports:
-      - "3000:3000"
-    volumes:
-      - .:/app
-      - /app/node_modules
-    env_file:
-      - .env
-    depends_on:
-      db:
-        condition: service_healthy
-    restart: unless-stopped
-    networks:
-      - app-network
-
-  db:
-    image: postgres:15
-    restart: always
-    environment:
-      POSTGRES_USER: ${DB_USERNAME}    
-      POSTGRES_PASSWORD: ${DB_PASSWORD} 
-      POSTGRES_DB: ${DB_DATABASE}      
-    ports:
-      - "5432:5432"
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DB_USERNAME}"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
-    networks:
-      - app-network
-
-volumes:
-  pgdata:
-
-networks:
-  app-network:
-    driver: bridge
+  ports:
+    - "3000:3000"
+  volumes:
+    - .:/app
+    - /app/node_modules
+  env_file:
+    - .env
+  environment:
+    - NODE_ENV=production
+  depends_on:
+    db:
+      condition: service_healthy
+  restart: unless-stopped
+  networks:
+    - app-network

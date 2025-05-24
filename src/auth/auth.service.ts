@@ -3,7 +3,6 @@ import { Response } from 'express';
 import { PrismaService } from '../prisma/prisma.service';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcryptjs';
-import { randomBytes } from 'crypto';
 
 @Injectable()
 export class AuthService {
@@ -32,98 +31,55 @@ export class AuthService {
     return result;
   }
 
-  // LOGIN dengan validasi session dulu
+  // LOGIN hanya dengan accessToken
   async login(user: any, res: Response) {
-    // Cek session aktif user (belum expired)
-    const existingSession = await this.prisma.session.findFirst({
-      where: {
-        userId: user.id,
-        expires: { gt: new Date() }, // belum expired
-      },
-    });
-
-    let sessionToken: string;
     const expires = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 hari
-
-    if (existingSession) {
-      // Pakai session token lama kalau masih valid
-      sessionToken = existingSession.sessionToken;
-    } else {
-      // Buat session baru
-      sessionToken = randomBytes(32).toString('hex');
-
-      // Hapus session lama kalau ada (expired)
-      await this.prisma.session.deleteMany({
-        where: {
-          userId: user.id,
-          expires: { lte: new Date() }, // expired session
-        },
-      });
-
-      // Simpan session baru
-      await this.prisma.session.create({
-        data: {
-          sessionToken,
-          userId: user.id,
-          expires,
-        },
-      });
-    }
 
     // Buat JWT access token dengan expiry 7 hari
     const payload = { email: user.email, sub: user.id, role: user.role, name: user.name };
     const accessToken = this.jwtService.sign(payload, { expiresIn: '7d' });
 
     // Simpan access token di account (upsert)
-    // Hapus dulu account token lama user itu
-await this.prisma.account.updateMany({
-  where: { userId: user.id },
-  data: {
-    access_token: accessToken,
-    expires_at: expires,
-  },
-});
+    await this.prisma.account.updateMany({
+      where: { userId: user.id },
+      data: {
+        access_token: accessToken,
+        expires_at: expires,
+      },
+    });
 
-// Kalau tidak ada record, buat baru (buat aman)
-const existAccount = await this.prisma.account.findFirst({ where: { userId: user.id } });
-if (!existAccount) {
-  await this.prisma.account.create({
-    data: {
-      userId: user.id,
-      access_token: accessToken,
-      expires_at: expires,
-      // Lengkapi field wajib lain kalau ada
-      provider: 'custom',
-      providerAccountId: sessionToken, // Contoh, sesuaikan
-    },
-  });
-}
+    // Kalau tidak ada record, buat baru
+    const existAccount = await this.prisma.account.findFirst({ where: { userId: user.id } });
+    if (!existAccount) {
+      await this.prisma.account.create({
+        data: {
+          userId: user.id,
+          access_token: accessToken,
+          expires_at: expires,
+          provider: 'custom',
+          providerAccountId: user.id.toString(),
+        },
+      });
+    }
 
-
-    // Set cookie accessToken ke client
+    // Simpan ke cookie
     res.cookie('token', accessToken, {
       httpOnly: true,
       sameSite: 'none',
-      secure: process.env.NODE_ENV === 'production', // true kalo HTTPS
-      maxAge: 7 * 24 * 60 * 60 * 1000,
-    });
-
-    // Optional juga set cookie session token kalau perlu
-    res.cookie('session_token', sessionToken, {
-      httpOnly: true,
-      sameSite: 'none',
-      secure: process.env.NODE_ENV === 'production',
+      secure: true,
+      partitioned: true,
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
     return {
+      message: 'Login sukses',
+      accessToken,
       user: {
         id: user.id,
         email: user.email,
         name: user.name,
         role: user.role,
       },
-      sessionToken, // optional kalau frontend mau simpan juga
     };
   }
 
@@ -147,8 +103,8 @@ if (!existAccount) {
     });
   }
 
-  // LOGOUT: blacklist token dan hapus session
-  async logout(accessToken: string, sessionToken: string) {
+  // LOGOUT: blacklist token
+  async logout(accessToken: string) {
     // Verifikasi JWT dulu
     let decoded: any;
     try {
@@ -170,12 +126,10 @@ if (!existAccount) {
       },
     });
 
-    // Hapus session yang cocok dengan sessionToken
-    await this.prisma.session.deleteMany({
-      where: {
-        userId: decoded.sub,
-        sessionToken,
-      },
+    // Hapus access_token dari account
+    await this.prisma.account.updateMany({
+      where: { userId: decoded.sub, access_token: accessToken },
+      data: { access_token: null, expires_at: "" },
     });
 
     return { message: 'Logout berhasil' };
