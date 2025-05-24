@@ -54,7 +54,12 @@ export class AuthController {
 
   @Post('logout')
   async logout(@Req() req: Request) {
-    const token = req.cookies['token'];
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.startsWith('Bearer ') ? authHeader.slice(7) : undefined;
+
+    if (!token) {
+      throw new UnauthorizedException('Token tidak ditemukan di header Authorization');
+    }
 
     return this.authService.logout(token);
   }

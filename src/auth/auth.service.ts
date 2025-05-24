@@ -129,7 +129,7 @@ export class AuthService {
     // Hapus access_token dari account
     await this.prisma.account.updateMany({
       where: { userId: decoded.sub, access_token: accessToken },
-      data: { access_token: null, expires_at: "" },
+      data: { access_token: undefined, expires_at: undefined },
     });
 
     return { message: 'Logout berhasil' };
