@@ -1,0 +1,22 @@
+# Node modules & build output
+node_modules
+dist
+
+# Log files
+*.log
+npm-debug.log*
+
+# Env files (kalau mau)
+
+# Docker files (opsional)
+Dockerfile.dev
+
+# OS / Editor stuff
+.DS_Store
+*.swp
+*.swo
+*.tmp
+
+# Git
+.git
+.gitignore

@@ -103,7 +103,7 @@ if (!existAccount) {
     // Set cookie accessToken ke client
     res.cookie('token', accessToken, {
       httpOnly: true,
-      sameSite: 'lax',
+      sameSite: 'none',
       secure: process.env.NODE_ENV === 'production', // true kalo HTTPS
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
@@ -111,7 +111,7 @@ if (!existAccount) {
     // Optional juga set cookie session token kalau perlu
     res.cookie('session_token', sessionToken, {
       httpOnly: true,
-      sameSite: 'lax',
+      sameSite: 'none',
       secure: process.env.NODE_ENV === 'production',
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
