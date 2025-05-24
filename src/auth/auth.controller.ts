@@ -5,6 +5,7 @@ import { AuthGuard } from '@nestjs/passport';
 import { AuthService } from './auth.service';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { LoginDto } from './dto/login.dto';
+import { RegisterDto } from './dto/register.dto';
 // ... import lainnya
 
 @Controller('auth')
@@ -13,6 +14,24 @@ export class AuthController {
     private readonly authService: AuthService,
     private readonly prisma: PrismaService,
   ) {}
+
+  @Post('register')
+async register(
+  @Body() body: RegisterDto,
+  @Res({ passthrough: true }) res: Response,
+) {
+  // 1. Buat user baru
+  const newUser = await this.authService.register(body);
+
+  // 2. Otomatis login setelah register
+  const loginData = await this.authService.login(newUser, res);
+
+  // 3. Return responsenya
+  return {
+    message: 'Registrasi sukses',
+    data: loginData,
+  };
+}
 
   @Post('login')
   async login(
